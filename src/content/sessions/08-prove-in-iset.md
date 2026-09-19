@@ -2,8 +2,8 @@
 title: Prove in iset.mm
 description: >-
   The same theorem proved against set.mm and then iset.mm, to see where a
-  classical proof needs excluded middle. Then the verifier milestone: your
-  verifier accepts peano.mm.
+  classical proof needs excluded middle. Then the verifier project check-in:
+  where your verifier should be by now.
 week: 8
 date: 2027-04-28
 teachers:
@@ -61,16 +61,17 @@ unless the proposition is decidable, and "Some things just won't have
 intuitionistic proofs." Write down which step needed excluded middle and
 what the table offers instead.
 
-The second hour is the [verifier milestone](/assessments/verifier-project/).
-Run your verifier on peano.mm, then run metamath.exe on the same file with
-`verify proof *`, which the
-[Metamath book](https://us.metamath.org/downloads/metamath.pdf) says "will
-report any proofs that are incorrect." The two must agree. Teodor checks
-each pair in turn.
+The second hour is the [verifier project](/assessments/verifier-project/)
+check-in. The course names, that morning, the tests in its suite that a
+verifier on track should pass by week 8; run yours against them in front of
+Teodor and say which pass. A verifier behind that mark is not penalised, but
+you leave with a list of what to do first. Bring the code: the questions worth
+asking are about the rule you have not enforced yet, and they are quicker with
+the file open.
 
 ## Afterwards
 
-The milestone is recorded against the verifier project. The proof that went
+Nothing from the check-in is marked. The proof that went
 through in either database counts as this week's
 [lab proof](/assessments/lab-proofs/), with your note on where the classical
 one needed excluded middle attached.

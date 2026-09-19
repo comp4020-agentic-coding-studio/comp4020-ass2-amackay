@@ -41,11 +41,11 @@ export const slopCourseMetaSchema = z
 // The single source of truth for the course record. The generated homepage,
 // navigation label and /api/index.json all read this object.
 export const courseMeta = slopCourseMetaSchema.parse({
-  code: "SLOP2373",
+  code: "SLOP3373",
   title: "Metamath 101",
   session: "Semester 1",
   year: 2027,
-  level: 2,
+  level: 3,
   startDate: "2027-02-22",
   endDate: "2027-05-28",
   description:

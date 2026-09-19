@@ -84,8 +84,7 @@ stronger axioms," for a logic the page says nobody knows to be decidable.
 
 metamath.org's [other topics page](https://us.metamath.org/other.html) lists
 Robert Solovay's [peano.mm](https://us.metamath.org/metamath/peano.mm), Peano
-arithmetic, which is Wednesday's
-[verifier milestone](/assessments/verifier-project/); and
+arithmetic; and
 [miu.mm](https://us.metamath.org/metamath/miu.mm), Hofstadter's MIU-system,
 alongside big-unifier.mm and demo0.mm. The same page lists Naip Moro's
 [Laws of Form database](http://naipmoro.github.io/lofmm/), derivations of G.

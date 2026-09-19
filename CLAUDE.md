@@ -3,7 +3,7 @@
 Assignment 2: one niche Slop University course, built as the website its
 students would use. The brief and spec are published on the course site; read
 them there, since a paraphrase here would be one more thing to keep true. The
-platform is fixed and documented in `README.md`. The course is `SLOP2373
+platform is fixed and documented in `README.md`. The course is `SLOP3373
 Metamath 101`, and its record lives in `src/course-config.ts` and nowhere else.
 
 ## The work, not the marks
@@ -33,11 +33,6 @@ the **site's** (the course, in its own register).
   Test any sentence: would it exist if the course had simply always been this
   way? If it only explains or defends a decision, it belongs in `PROCESS.md`
   or a commit body.
-- **Public prose gets the owner's review before the repo goes public.** Site
-  copy, `README.md`, `PROCESS.md`: anything that could be read as carrying the
-  owner's voice or judgement is read by the owner before the site ships. A
-  session lands its work on `main` without waiting for that review; the review
-  is of the whole, before the flip. Code and data don't need it.
 
 ## Prose
 
@@ -121,7 +116,7 @@ property of the site, not a sentence on it.
   history is read as evidence, and a trail that grew with the work is the
   point; one batch at the end is not.
 - **Never force-push, and never rewrite `main`.**
-- **`pnpm check` before a push, `pnpm check:evidence` before the flip.** A
+- **`pnpm check` before a push, `pnpm check:evidence` before the due date.** A
   change landed somewhere the checks could not run says so in its commit body,
   so the next session knows to run them first.
 - **Every `STARTER_CONTENT` marker is removed with the content it marks**, and
