@@ -2,48 +2,55 @@
 import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import heroImage from "../assets/images/hero-home.avif";
+import heroImage from "../assets/images/hero-home.png";
 import { courseMeta } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
 ---
 
 <ContentLayout
   title={`${courseMeta.code}: ${courseMeta.title}`}
   description={courseMeta.description}
   heroImage={heroImage}
-  heroImageAlt="A lecture theatre reduced to flat gold and black shapes, rows of seats sweeping past the frame, in a two-ink risograph print"
+  heroImageAlt="A proof tree drawn as flat black boxes joined by thin lines on warm cream, each box holding a short Metamath statement, branching upward from one root"
   {...siteConfig}
 >
   <ul class="course-tags" aria-label="Course tags">
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
   <h2>What you will do</h2>
   <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
+    Learn to read a Metamath database, prove theorems in it, and write a program
+    that checks the proofs. Each week has a Monday lecture and a Wednesday lab.
+    The first two labs install the tools and read small databases; from week 3
+    every lab ends with a theorem to prove in mmj2, and a proof counts when the
+    verifier accepts it. From week 5 you are also writing your own verifier, in
+    any language, and by week 12 it checks set.mm.
   </p>
 
   <h2>Who it is for</h2>
   <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
+    Anyone who wants to learn Metamath. You need to have programmed before, in
+    any language, because the verifier project is a program. You do not need to
+    have studied logic: the language is taught from nothing in the first three
+    weeks, and every symbol is explained when it first appears. If you have met
+    formal logic already, the first three weeks will be quick and the rest will
+    not.
   </p>
 
   <h2>Where to go next</h2>
   <CardGrid columns={2}>
+    <Card title="Lectures" href="/lectures/">
+      <p>What each of the twelve weeks covers, and the reading behind it.</p>
+    </Card>
     <Card title={sessionLabels.plural} href="/sessions/">
-      <p>The weekly schedule and what happens in each teaching session.</p>
+      <p>What to bring to each lab, what happens in it, and what leaves the room.</p>
     </Card>
     <Card title="Assessment" href="/assessments/">
-      <p>What is marked, what it is worth, and when it is due.</p>
+      <p>Lab proofs, the definition exercise and the verifier project: what each is worth and when it is due.</p>
     </Card>
     <Card title="People" href="/people/">
-      <p>Who teaches the course and how to reach them.</p>
+      <p>Who teaches the course and who to ask about what.</p>
     </Card>
   </CardGrid>
 </ContentLayout>

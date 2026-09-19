@@ -5,8 +5,8 @@ import { courseMeta } from "./course-config";
 // The underlying collection and URL remain `sessions`; these labels are the
 // language students see. Change them to Studios, Tutorials, Expeditions, etc.
 export const sessionLabels = {
-  singular: "Session",
-  plural: "Sessions",
+  singular: "Lab",
+  plural: "Labs",
 } as const;
 
 export const graphCollections = ["sessions", "assessments", "lectures", "people"];
@@ -30,5 +30,5 @@ export const siteConfig = defineSiteConfig({
 
   licence: "CC-BY-NC-SA-4.0",
   socialImage: "/src/assets/images/card.png",
-  socialImageAlt: `A preview card for ${courseMeta.code}: ${courseMeta.title}`,
+  socialImageAlt: `A Metamath proof tree of gold and cream boxes on warm cream, each holding a statement such as "|- ( ph -> ps )" with a small black tag naming the rule used, and ${courseMeta.code} ${courseMeta.title} set in the top-left corner`,
 });
