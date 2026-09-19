@@ -22,6 +22,8 @@ links:
     url: https://us.metamath.org/downloads/mmverify.py
   - label: mmj2
     url: https://github.com/digama0/mmj2
+  - label: Metamath Proof Explorer home page
+    url: https://us.metamath.org/mpeuni/mmset.html
   - label: Overview of Metamath (IHP 2014 slides)
     url: https://us.metamath.org/downloads/ihp2014mm.pdf
 ---
@@ -46,10 +48,12 @@ ponens. Write the substitution and the resulting statement at every step. Your
 last line must match the "Result of proof" in the file.
 
 Forty-five minutes in [mmj2](https://github.com/digama0/mmj2). Make a small
-database with the four axioms copied from set.mm (ax-1, ax-2 and ax-mp are
-shown in Metamath syntax on slides 15 to 17 of the
-[IHP 2014 overview](https://us.metamath.org/downloads/ihp2014mm.pdf)), state
-your theorem as a `$p`, and enter the proof as you checked it.
+database with the four axioms, ax-1, ax-2, ax-3 and the rule ax-mp, as the
+[Proof Explorer home page](https://us.metamath.org/mpeuni/mmset.html) states
+them (slides 15 to 17 of the
+[IHP 2014 overview](https://us.metamath.org/downloads/ihp2014mm.pdf) show
+ax-1, ax-2 and ax-mp written out in Metamath syntax), state your theorem as a
+`$p`, and enter the proof as you checked it.
 
 Thirty minutes with a second verifier. Save the database and run
 `python3 mmverify.py < yourfile.mm 2> yourfile.log`, the invocation

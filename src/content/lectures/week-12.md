@@ -1,9 +1,9 @@
 ---
 title: Miscellanea
-description:
-  The pieces that fit nowhere else — the Solitaire applet, the shortest
-  Principia proofs, the open problems page, where the community talks, the
-  meetings, the video, the GitHub organisation, and one paragraph of history.
+description: >-
+  The pieces that fit nowhere else: the Solitaire applet, the shortest Principia
+  proofs, open problems, where the community talks, meetings, a video, the
+  GitHub organisation, and one paragraph of history.
 week: 12
 date: 2027-05-24
 teachers:
@@ -42,8 +42,7 @@ links:
     url: https://github.com/metamath/set.mm/blob/develop/README.md
 ---
 
-The last lecture collects the pieces of the Metamath record that fit under no
-earlier week.
+The last lecture collects the pieces that fit under no earlier week.
 
 **Metamath Solitaire** is a Java applet, downloadable from the
 [home page](https://us.metamath.org/index.html) as
@@ -85,7 +84,7 @@ held at Carnegie Mellon from 6 to 10 January 2020, where Carneiro's talk was
 
 **The record, drawn.** "Metamath Proof Explorer (set.mm) contributions
 visualized with Gource through 2019-10-04" is
-[a video](https://www.youtube.com/watch?v=XC1g8FmFcUU) listed on the same page.
+[a video](https://www.youtube.com/watch?v=XC1g8FmFcUU) on the same page.
 
 **The organisation.** [github.com/metamath](https://github.com/metamath) was
 created on 11 September 2013 and holds, among others,
@@ -94,10 +93,10 @@ Metamath executable", and [set.mm](https://github.com/metamath/set.mm).
 
 **History, as far as it is documented.** The
 [set.mm README](https://github.com/metamath/set.mm/blob/develop/README.md)
-dedicates the collection "to the memory of Norman "Norm" Dwight Megill, Ph.D.
-(1950-2021), creator of the Metamath system and cultivator of an international
+dedicates the collection to the memory of Norman "Norm" Dwight Megill, Ph.D.
+(1950-2021), "creator of the Metamath system and cultivator of an international
 community of people with the shared dream of digitizing and formally verifying
-mathematics." That is the record this course cites, and it stops there.
+mathematics". That is what is documented, and this page stops there.
 
 ## Read
 

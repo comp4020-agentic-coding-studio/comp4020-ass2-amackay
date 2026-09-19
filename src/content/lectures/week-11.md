@@ -80,8 +80,8 @@ MM0".
 One name to know: "MetaMath: Bootstrap Your Own Mathematical Questions for
 Large Language Models" (2023) and its dataset MetaMathQA. Its
 [record](https://doi.org/10.48550/arxiv.2309.12284) describes a language model
-fine-tuned on rewritten word problems and scored on the GSM8K and MATH
-benchmarks; nothing in that record concerns the Metamath language.
+fine-tuned on rewritten mathematical questions and scored on the GSM8K and
+MATH benchmarks; nothing in that record concerns the Metamath language.
 
 ## Read
 

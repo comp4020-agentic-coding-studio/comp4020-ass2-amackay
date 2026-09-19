@@ -54,9 +54,9 @@ and out of Metamath, and one published comparison. It does not rank systems.
 specifications and proofs", inspired by "Metamath and Lean, two proof languages
 at opposite ends of a spectrum" ([digama0/mm0](https://github.com/digama0/mm0)).
 It separates specification from proof, adds Metamath One, a language in which
-proofs are written and compiled, and states the goal: "to
-build a formally verified (in MM0) verifier for MM0, down to the hardware". The
-2019 paper, as [its arXiv record](https://doi.org/10.48550/arxiv.1910.10703)
+proofs are written and compiled, and states the goal: "to build a formally
+verified (in MM0) verifier for MM0, down to the hardware". The 2019 paper, as
+[its arXiv record](https://doi.org/10.48550/arxiv.1910.10703)
 describes it, "aims for simplicity of logic and implementation, without
 compromising on efficiency of verification"; the 2020 paper is indexed at
 [its DOI](https://doi.org/10.1007/978-3-030-53518-6_5) without an abstract. The

@@ -20,6 +20,8 @@ links:
     url: https://github.com/digama0/mm0
   - label: set.mm repository
     url: https://github.com/metamath/set.mm
+  - label: Metamath Proof Explorer home page
+    url: https://us.metamath.org/mpeuni/mmset.html
   - label: mmj2
     url: https://github.com/digama0/mmj2
 ---
@@ -29,9 +31,11 @@ links:
 Read the Introduction of the
 [Metamath Zero README](https://github.com/digama0/mm0). In the same repository,
 open `examples/set.mm0`, which the README calls "a hand-translation of the axiom
-system of set.mm into MM0", and keep it in one window; in the other, open the
-propositional-calculus axioms ax-1, ax-2, ax-3 and ax-mp near the top of
-[set.mm](https://github.com/metamath/set.mm). You need nothing installed for
+system of set.mm into MM0", and keep it in one window; in the other, open
+[set.mm](https://github.com/metamath/set.mm) at its propositional axioms ax-1,
+ax-2, ax-3 and the rule ax-mp, which the
+[Proof Explorer home page](https://us.metamath.org/mpeuni/mmset.html) lists
+with their statements. You need nothing installed for
 the reading; you need mmj2 for the last part, as in every proving lab.
 
 ## In the lab
@@ -40,9 +44,9 @@ The first 45 minutes are pair reading. For each of the four axioms, find the
 statement in set.mm0 that plays its role, and note what Metamath declares with
 `$c`, `$v` and `$f` and what set.mm0 does instead. Then, alone, write half a
 page: two differences between the files that the README itself states, for
-example that MM0 keeps expressions as trees where Metamath keeps strings, or
-that definitions in Metamath "are just axioms", each with one line quoted from
-each file beside it. The last 45 minutes are for your week 10 lab proof in
+example that proof expressions in Metamath "are strings of symbols, not
+trees", or that its definitions "are just axioms", each with one line quoted
+from each file beside it. The last 45 minutes are for your week 10 lab proof in
 [mmj2](https://github.com/digama0/mmj2), set at the start of the lab.
 
 If you have `mm0-hs` installed, `mm0-hs from-mm` translates a Metamath file to
