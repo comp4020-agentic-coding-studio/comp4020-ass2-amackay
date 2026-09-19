@@ -51,3 +51,15 @@ is traceable, not that it is good: that is the marker's call.
 
 Images aren't checked: unlike a citation whose SHA doesn't resolve, a broken
 image is visible the moment this file is rendered on GitHub.
+
+## Candidate citations
+
+Maintained by the agent: one line per commit, what it did, no interpretation.
+
+- `c96e42c` — rewrote `CLAUDE.md`: the prose rule, the sourcing rule, the review rule, the landing workflow.
+- `1d5a11e` — filled in the course record, the two staff pages, the policies page, the home page and listing intros, and the card and hero artwork.
+- `fd42780` — wrote the twelve lectures and twelve labs; every claim about Metamath links its public source.
+- `65c5013` — wrote the three assessments: lab proofs 30%, the definition exercise 20%, the verifier project 50%.
+- `55c2fcd` — wrote the week 1 deck, 16 slides with speaker notes.
+- `a882e6a` — added `spec/course-promises.test.ts` and `spec/sources.json`: the twelve-week shape, the calendar, the assessment sum, and the list of every outside link.
+- `2e254ff` — refined weeks 10 to 12 after review: quotations cut at the source's words, axioms pointed at the Proof Explorer.
