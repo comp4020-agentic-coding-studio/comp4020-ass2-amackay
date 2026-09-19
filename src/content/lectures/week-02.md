@@ -5,6 +5,7 @@ week: 2
 date: 2027-03-01
 teachers:
   - noor-castellane
+slides: /decks/week-02/
 related:
   - sessions/02-read-and-write
 links:

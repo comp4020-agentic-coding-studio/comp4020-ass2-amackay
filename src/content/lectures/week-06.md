@@ -8,6 +8,7 @@ week: 6
 date: 2027-03-29
 teachers:
   - noor-castellane
+slides: /decks/week-06/
 related:
   - sessions/06-distinct-variables
 links:

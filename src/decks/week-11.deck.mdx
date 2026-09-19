@@ -1,0 +1,236 @@
+---
+title: Machine learning on Metamath
+description: The week 11 lecture as slides — six papers that trained programs to find Metamath proofs, from 2016 to 2025, each as its own record describes it, the repositories built for them, and the name collision to know about.
+---
+
+{/* _class: centered */}
+
+# Machine learning on Metamath
+
+SLOP3373 Metamath 101 · Week 11
+
+Noor Castellane
+
+```notes
+Last lecture with new material. Six papers, in date order, then three
+repositories and one name that is not what it looks like. Wednesday's lab is
+the last one that counts toward lab proofs.
+```
+
+---
+
+## The line, 2016 to 2025
+
+- Six papers used set.mm to train and test programs that search for proofs
+- Each **as its own record describes it**; where the abstract stops, so does this lecture
+
+A **held-out set**: the theorems kept back from training.
+
+```notes
+Every slide today rests on one abstract, and claims nothing the abstract does
+not say. Held-out set comes up twice; keep the
+definition in mind.
+```
+
+---
+
+## Holophrasm (2016)
+
+Daniel Whalen's system, as its record describes it, explores partial proof
+trees with "a neural-network-augmented bandit algorithm" and "proves 14% of
+its test theorems from Metamath's set.mm module".
+
+[arXiv record](https://doi.org/10.48550/arxiv.1608.02644)
+
+```notes
+The first of the line. Fourteen percent of its own test theorems, on the
+database you have verified every week since week 1.
+```
+
+---
+
+## GPT-f (2020)
+
+Polu and Sutskever present "an automated prover and proof assistant, GPT-f,
+for the Metamath formalization language".
+
+It "found new short proofs that were accepted into the main Metamath library".
+
+[arXiv record](https://doi.org/10.48550/arxiv.2009.03393)
+
+```notes
+A language model, pointed at set.mm. The second sentence is the one the next
+slide is about.
+```
+
+---
+
+{/* _class: impact */}
+
+"the first time a deep-learning based system has contributed proofs that were
+adopted by a formal mathematics community"
+
+— [GPT-f, arXiv record](https://doi.org/10.48550/arxiv.2009.03393)
+
+Which proofs is not stated there.
+
+```notes
+That is the abstract's own claim, in its own words. It does not name the
+proofs, and neither do I.
+```
+
+---
+
+## MetaGen (2020)
+
+Wang and Deng train "a neural generator that automatically synthesizes
+theorems and proofs for the purpose of training a theorem prover", with
+experiments in Metamath.
+
+[arXiv record](https://doi.org/10.48550/arxiv.2002.07019)
+
+```notes
+Same year as GPT-f, a different move: instead of training a prover on set.mm,
+generate more theorems to train it on.
+```
+
+---
+
+## HyperTree Proof Search (2022)
+
+Lample and colleagues describe a search "inspired by the recent success of
+AlphaZero".
+
+Their record reports, on a held-out set of Metamath theorems:
+
+- 65.4%, against "56.5% by GPT-f"
+- 82.6% with online training
+
+[arXiv record](https://doi.org/10.48550/arxiv.2205.11491)
+
+```notes
+These are the numbers later work measures against, and they are in
+this week's reading. Held-out set: the theorems kept back from training.
+```
+
+---
+
+## REFACTOR (2024)
+
+Zhou and colleagues train a network to extract reusable theorems from proofs.
+
+Applied "to the existing Metamath library, REFACTOR extracted 16 new
+theorems".
+
+[arXiv record](https://doi.org/10.48550/arxiv.2402.17032)
+
+```notes
+Not proving, extracting: finding a lemma inside existing proofs and pulling it
+out. Sixteen, by its own count.
+```
+
+---
+
+## Grammar-compressed proof terms (2025)
+
+Wernhard and Zombori take Metamath as their "source of human-structured
+proofs" and treat a knowledge base as "a grammar that compresses a set of
+gigantic proof trees".
+
+[arXiv record](https://doi.org/10.48550/arxiv.2505.12305)
+
+```notes
+The most recent, and the one furthest from proof search: the database itself,
+read as a compression scheme.
+```
+
+---
+
+## Three repositories
+
+- [mm-atp-benchmark](https://github.com/ai4reason/mm-atp-benchmark): per its
+  GitHub listing, a "Metamath ATP Benchmark created from set.mm"
+- [synthetic-mm](https://github.com/collin-kemper/synthetic-mm): "a synthetic
+  data framework for Metamath"
+- [Compass](https://github.com/TheG3ntleman/Compass): "A high performance
+  metamath ITP to train for neural theorem proving"
+
+```notes
+Each described by its own listing. Compass's next line is on the following
+slide.
+```
+
+---
+
+## Compass, one line later
+
+"Project abandoned in favour of LeanDojo and MM0"
+
+[Compass on GitHub](https://github.com/TheG3ntleman/Compass)
+
+```notes
+MM0 is week 10's Metamath Zero. A repository that says what became of itself
+is worth quoting in full.
+```
+
+---
+
+{/* _class: impact */}
+
+# "MetaMath" (2023) is not this.
+
+[arXiv record](https://doi.org/10.48550/arxiv.2309.12284)
+
+```notes
+You met this collision in week 1. It is back because a search for this
+week's papers will land on it first.
+```
+
+---
+
+## The name to know
+
+"MetaMath: Bootstrap Your Own Mathematical Questions for Large Language
+Models", and its dataset MetaMathQA.
+
+Its record describes a language model fine-tuned on rewritten mathematical
+questions, scored on GSM8K and MATH.
+
+Nothing in that record concerns the Metamath language.
+
+[arXiv record](https://doi.org/10.48550/arxiv.2309.12284)
+
+```notes
+Capital M, machine-learning context, benchmark names you have not seen in this
+course: that is the tell.
+```
+
+---
+
+## Before Wednesday's lab
+
+- Read the header of
+  [pmproofs.txt](https://us.metamath.org/mmsolitaire/pmproofs.txt)
+- Learn its notation: `1`, `2`, `3` are the axioms, `D` is ax-mp
+- Pick a theorem whose proof is at most nine characters; bring its line
+- Bring mmj2 and [mmverify.py](https://us.metamath.org/downloads/mmverify.py)
+
+```notes
+The lab verifies a machine-found proof by hand, then in mmj2, then with
+mmverify.py. It is the last proof that counts toward lab proofs; the hand
+check and the database are due Friday.
+```
+
+---
+
+## Read
+
+- [GPT-f abstract](https://doi.org/10.48550/arxiv.2009.03393) — the claim
+  that machine-found proofs entered set.mm
+- [HyperTree Proof Search abstract](https://doi.org/10.48550/arxiv.2205.11491)
+  — the numbers later work measures against
+
+```notes
+Two abstracts, ten minutes. Read them for what they claim and for what they
+leave out.
+```

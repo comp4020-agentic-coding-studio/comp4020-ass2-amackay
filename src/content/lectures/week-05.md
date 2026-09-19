@@ -8,6 +8,7 @@ week: 5
 date: 2027-03-22
 teachers:
   - noor-castellane
+slides: /decks/week-05/
 related:
   - sessions/05-mmj2-in-depth
   - assessments/verifier-project

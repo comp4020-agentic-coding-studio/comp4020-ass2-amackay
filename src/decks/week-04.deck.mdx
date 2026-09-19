@@ -1,0 +1,204 @@
+---
+title: set.mm and the Proof Explorer
+description: The week 4 lecture as slides — the set.mm database and its repository, the web pages generated from it, the theorem list as its table of contents, how it cites books, and where its history is kept.
+---
+
+{/* _class: centered */}
+
+# set.mm and the Proof Explorer
+
+SLOP3373 Metamath 101 · Week 4
+
+Noor Castellane
+
+```notes
+Week 3 was the verifiers. This week is the database they verify, and the
+website that is the same file rendered one page per statement. Wednesday you
+read a proof there before you write one.
+```
+
+---
+
+## set.mm
+
+One text file of axioms, definitions, theorems and proofs, in the
+[metamath/set.mm repository](https://github.com/metamath/set.mm).
+
+Its README: "a collection of rigorously verified Metamath databases that
+specify mathematical axioms and formal proofs of theorems derived from those
+axioms".
+
+[set.mm README](https://github.com/metamath/set.mm/blob/develop/README.md)
+
+```notes
+The repository holds several databases; set.mm is the big one and the one
+this course works in from here on. The README is the first thing to read when
+you clone it.
+```
+
+---
+
+## Which mathematics
+
+The README says set.mm "uses classical logic and Zermelo–Fraenkel set theory
+with the axiom of choice (ZFC)".
+
+[set.mm README](https://github.com/metamath/set.mm/blob/develop/README.md)
+
+```notes
+One foundation, stated in one sentence. Everything in the theorem list on a
+later slide is built up from those axioms, and the list is ordered that way.
+```
+
+---
+
+## Proofs are stored compressed
+
+The same page says tools "can easily decompress them to provide a
+human-readable sequence of every proof step".
+
+[set.mm README](https://github.com/metamath/set.mm/blob/develop/README.md)
+
+```notes
+Open the file and a proof is a block of letters, not the list of labels from
+week 2. It is the same list, compressed; the Proof Explorer shows you the
+decompressed form.
+```
+
+---
+
+## Every change is checked first
+
+"Changes ("commits") to any database are first automatically verified before
+they are accepted, using GitHub actions."
+
+[set.mm README](https://github.com/metamath/set.mm/blob/develop/README.md)
+
+```notes
+This is last week's workflow, seen from the database's side. Nothing lands in
+the file that the five verifiers have not accepted.
+```
+
+---
+
+## The Proof Explorer
+
+The same file, rendered as one web page per statement.
+
+[Metamath Proof Explorer](https://us.metamath.org/mpeuni/mmset.html)
+
+```notes
+Not a second source and not a summary: a rendering of set.mm. The Wednesday
+lab lives here for its first half hour.
+```
+
+---
+
+{/* _class: impact */}
+
+"The only rule you need to know in order to follow the symbol manipulations in
+a Metamath proof is substitution."
+
+— [How Metamath Proofs Work](https://us.metamath.org/mpeuni/mmset.html#proofs)
+
+```notes
+The section takes apart one step of the proof of 2 + 2 = 4. It is the
+before-the-lab reading, and it is the week 3 stack rule told from the reader's
+side.
+```
+
+---
+
+## The table of contents
+
+The [Theorem List](https://us.metamath.org/mpeuni/mmtheorems.html):
+
+- Part 1: classical first-order logic with equality
+- Part 2: Zermelo–Fraenkel set theory
+- Part 3: ZFC
+- Later parts: real and complex numbers, number theory, algebra, topology
+
+Section 1.2, Propositional calculus, is where Wednesday's lab proves.
+
+```notes
+The list is the map of the file. Find section 1.2 before the lab; your
+assigned theorem is in it.
+```
+
+---
+
+## Citing books
+
+A theorem's description cites a book by a bracketed label such as [Tarski] or
+[Megill]. The home page's
+[Bibliography](https://us.metamath.org/mpeuni/mmset.html#bib) expands each
+label to a full citation.
+
+```notes
+The labels are the database's own citation scheme. When you meet one in a
+description, the bibliography section of the home page is where it resolves.
+```
+
+---
+
+## The cross-reference
+
+The [Bibliographic Cross-Reference](https://us.metamath.org/mpeuni/mmbiblio.html)
+"collects in one place the bibliographic references made in the Metamath Proof
+Explorer's axiom, definition, and theorem Descriptions".
+
+```notes
+The page says: "If you are studying a particular set theory book, this list can
+be handy for finding out where any corresponding Metamath theorems might be
+located." The other direction from the bibliography: book first, theorem
+second.
+```
+
+---
+
+## Where the history is kept
+
+Old versions of the file live in a separate repository,
+[sorear/set.mm-history](https://github.com/sorear/set.mm-history).
+
+Its README: "Each revision corresponds to an archived version of set.mm".
+
+```notes
+The same README warns that "you cannot assume old versions of set.mm can be
+loaded unmodified in current versions of metamath." An old file is a record,
+not something to load and prove in.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. mmj2 running with set.mm loaded; download it from the
+   [repository](https://github.com/metamath/set.mm)
+2. The [README](https://github.com/digama0/mmj2/blob/master/README.md)'s
+   interactive tutorial, "which ought to take about an hour", if you have not
+   done it
+3. Start mmj2 before you arrive
+
+```notes
+The README says it "takes a time to get started (circa 60 seconds on a slow
+machine loading the large database set.mm)". The first half hour is reading a
+proof in the Theorem List; the rest is proving your second theorem in mmj2.
+```
+
+---
+
+## Read before next week
+
+- [Metamath Proof Explorer: A Modern Principia Mathematica](https://www.youtube.com/watch?v=8WH4Rd4UKGE):
+  David A. Wheeler's 2016 talk, listed on the
+  [other topics page](https://us.metamath.org/other.html)
+- [How Metamath Proofs Work](https://us.metamath.org/mpeuni/mmset.html#proofs):
+  read before the lab
+- [set.mm contributions visualized with Gource](https://www.youtube.com/watch?v=XC1g8FmFcUU):
+  the contribution history through 2019-10-04, as an animation
+
+```notes
+The talk is lecture-length; the proofs section is short and is the one to do
+before Wednesday. The Gource video is for the pleasure of it.
+```

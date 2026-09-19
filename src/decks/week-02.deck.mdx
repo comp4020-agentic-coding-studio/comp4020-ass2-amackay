@@ -1,0 +1,237 @@
+---
+title: The language
+description: The week 2 lecture as slides — the four pages of the Metamath book that specify the language, its tokens, keywords and statements, the book itself, a condensed introduction, two machine-readable grammars, and the $j annotations that tools read.
+---
+
+{/* _class: centered */}
+
+# The language
+
+SLOP3373 Metamath 101 · Week 2
+
+Noor Castellane
+
+```notes
+Last week was where things live. This week is what a .mm file is made of,
+which is small enough to cover in one lecture. Wednesday you read two
+databases and write a third.
+```
+
+---
+
+{/* _class: impact */}
+
+The whole language is section 4.1 of the Metamath book, pages 112 to 115 —
+"about 4 pages long".
+
+— [Metamath book](https://us.metamath.org/downloads/metamath.pdf) ·
+[Home Page](https://us.metamath.org/index.html)
+
+```notes
+The phrase is the home page's. Four pages is the specification, not a summary
+of it; this lecture reads those pages, and the reading for the week is to read
+them twice more.
+```
+
+---
+
+## Tokens
+
+A database is a sequence of tokens, drawn from the 94 printable ASCII
+characters and separated by white space. Three kinds:
+
+- **keywords**, which all begin with `$`
+- **labels**, which name statements
+- **math symbols**, which are anything else
+
+[Metamath book, section 4.1](https://us.metamath.org/downloads/metamath.pdf)
+
+```notes
+Everything you will ever parse is one of these three. A verifier's first job
+is splitting the file on white space, and that is all the lexing there is.
+```
+
+---
+
+## The keywords
+
+```
+${ $}  $c $v  $f $e $d  $a $p  $. $=  $( $) $[ $]
+```
+
+The last four handle comments and file inclusion.
+
+[Metamath book, section 4.1](https://us.metamath.org/downloads/metamath.pdf)
+
+```notes
+Fifteen keywords. Learn them as pairs and groups the way they are spaced here:
+block, declarations, hypotheses, assertions, terminators, and the four for
+comments and includes.
+```
+
+---
+
+## Statements: declaring
+
+- `$c` declares constants
+- `$v` declares variables
+- `$f` and `$e` are hypotheses
+- `$d` restricts substitution
+
+[Metamath book, section 4.1](https://us.metamath.org/downloads/metamath.pdf)
+
+```notes
+After comments, a database is a sequence of statements. These four set things
+up: what the symbols are, what a variable's type is, what a theorem assumes,
+and which variables may not be substituted for the same thing.
+```
+
+---
+
+## Statements: asserting
+
+- `$a` asserts an axiom
+- `$p` asserts a theorem, and carries its proof after `$=`
+- `${ $}` bounds a block, which limits how long a declaration stays active
+
+[Metamath book, section 4.1](https://us.metamath.org/downloads/metamath.pdf)
+
+```notes
+An axiom and a theorem are the same kind of statement, except that a theorem
+has to earn its place with a proof. The block is scoping: what is declared
+inside it is gone at the closing brace.
+```
+
+---
+
+{/* _class: impact */}
+
+# A proof is a list of labels and nothing more.
+
+Section 4.1.4 says what makes one correct. That is week 3.
+
+```notes
+This is the fact to take away. There is no proof language, no tactics, no
+inference rules to learn: a proof names statements, in order, and the verifier
+does the rest.
+```
+
+---
+
+## The book
+
+- Norman Megill, with extensive revisions by David A. Wheeler
+- 248 pages
+- Source and errata on
+  [GitHub](https://github.com/metamath/metamath-book), under CC0
+- A [German translation](https://us.metamath.org/downloads/metamath-german.pdf)
+
+[Metamath book (PDF)](https://us.metamath.org/downloads/metamath.pdf)
+
+```notes
+The four pages sit inside a 248-page book. Section 4.1 now; section 2.2.2 on
+Wednesday, for the example the lab copies.
+```
+
+---
+
+## A condensed introduction
+
+Ivan Kuckir's opens: "Official Metamath description has 211 pages. This is a
+"shrinked" version".
+
+It presents Metamath as a language for defining a formal grammar: `$c`
+declares terminal symbols, `$v` nonterminals.
+
+[Introduction to Metamath](https://blog.ivank.net/introduction-to-metamath.html) ·
+[Other Topics](https://us.metamath.org/other.html)
+
+```notes
+The site's Other Topics page names him as the author of the MM Tool verifier,
+so this is a verifier-writer's reading of the language. Terminal and
+nonterminal is a useful way to see $c and $v if you have met grammars before.
+```
+
+---
+
+## Grammar one: MM.g4
+
+An Antlr4 grammar, behind the gramm verifier, on one screen:
+
+- a database is `stat* EOF`
+- a label is `[A-Za-z0-9._-]+`
+- a math word is any run of characters without white space or `$`
+
+[MM.g4](https://github.com/naipmoro/gramm/blob/master/src/main/antlr4/naipmoro/gramm/MM.g4)
+
+```notes
+Read it after the four pages and see how little is left once the prose is
+gone. The three rules on this slide are the tokens slide, as a machine reads
+it.
+```
+
+---
+
+## Grammar two, and what a grammar is not
+
+A [tree-sitter grammar](https://github.com/perrotuerto/tree-sitter-metamath/blob/main/README.md)
+parses a database into a syntax tree from Python.
+
+Neither grammar says whether a proof is right. A grammar only tokenises and
+parses.
+
+```notes
+Two machine-readable grammars, and neither is a verifier. Keep the two jobs
+apart in your head now, because in week 5 you write both halves, and the
+parsing half comes first.
+```
+
+---
+
+## `$j`
+
+"a way to include information in metamath proof files which are not needed for
+verifying, but which are useful for other tools like proof assistants,
+definition checkers"
+
+A kind of comment (book, section 4.4.3), so a verifier may skip them.
+
+[Metamath $j commands](https://github.com/metamath/set.mm/blob/develop/mm-j-commands.html)
+
+```notes
+The one part of the file the specification lets a verifier ignore. Week 7's
+definition exercise depends on them, so know they exist and where they are
+documented.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. Download [miu.mm](https://us.metamath.org/metamath/miu.mm) and
+   [peano.mm](https://us.metamath.org/metamath/peano.mm)
+2. Have section 4.1 of the
+   [book](https://us.metamath.org/downloads/metamath.pdf) open
+3. Bring metamath-exe from week 1
+
+```notes
+You read both files line by line, then write a database of about ten lines and
+get metamath-exe to accept it with verify proof *. The pattern is the example
+in section 2.2.2 of the book, pages 40 to 42.
+```
+
+---
+
+## Read before next week
+
+- [Metamath book](https://us.metamath.org/downloads/metamath.pdf), section
+  4.1: the four pages themselves, twice before Wednesday
+- [Introduction to Metamath](https://blog.ivank.net/introduction-to-metamath.html):
+  the same material as a grammar, in a few screens
+- [MM.g4](https://github.com/naipmoro/gramm/blob/master/src/main/antlr4/naipmoro/gramm/MM.g4):
+  the surface syntax at its shortest
+
+```notes
+The four pages twice, then the two short readings for two other angles on the
+same thing. Half an hour in all.
+```

@@ -1,0 +1,225 @@
+---
+title: Formalisation in practice
+description: The week 9 lecture as slides — what the largest Metamath proofs cost, from the records of GCH implies AC, the prime number theorem and Bertrand's postulate, a proof done on video, two papers on legibility, and the 100 theorems scoreboard.
+---
+
+{/* _class: centered */}
+
+# Formalisation in practice
+
+SLOP3373 Metamath 101 · Week 9
+
+Noor Castellane
+
+```notes
+Your lab proofs so far fit in one worksheet. This week is what happens when
+they do not, told from the record of proofs that exist. Wednesday's lab is a
+small version of the same thing.
+```
+
+---
+
+## Three proofs, one author
+
+Three of the largest formalisations in set.mm are by one author, and the record
+of each says what it cost:
+
+- GCH implies AC
+- The prime number theorem
+- Bertrand's postulate
+
+```notes
+Each has a paper or a talk beside it, so the cost is on record rather than
+guessed. We take them in turn.
+```
+
+---
+
+## GCH implies AC
+
+Mario Carneiro, [CICM 2015](http://www.cicm-conference.org/2015/).
+
+metamath.org's [other topics page](https://us.metamath.org/other.html) links
+the video, slides and [paper](https://doi.org/10.48550/arxiv.1506.03533).
+
+```notes
+GCH is the generalised continuum hypothesis, AC the axiom of choice. The
+paper formalises Specker's "local" version of the claim.
+```
+
+---
+
+{/* _class: impact */}
+
+"with particular attention to some extra complications which were glossed over
+in the original informal proof."
+
+— [GCH implies AC](https://doi.org/10.48550/arxiv.1506.03533), abstract as
+OpenAlex records it
+
+```notes
+This is the lesson of the whole week. An informal proof glosses; a formal one
+cannot. Every one of your lab proofs has already met this at small scale.
+```
+
+---
+
+## The prime number theorem
+
+- `pnt`, 2016-06-01, and Dirichlet's theorem `dirith`, 2016-05-12, both Mario
+  Carneiro
+- [CICM 2016](http://www.cicm-conference.org/2016/) talk and
+  [paper](https://doi.org/10.48550/arxiv.1608.02029): Selberg's elementary
+  proof, "within the proof system Metamath."
+
+[Metamath 100 at commit 2c1dffe](https://github.com/metamath/set.mm/blob/2c1dffe/mm_100.html)
+
+```notes
+The dates and authorship are from the Metamath 100 page, pinned to a commit
+because the page changes. The paper is on the reading list: it is the account
+of the largest of the three.
+```
+
+---
+
+## Bertrand's postulate
+
+- `bpos` in set.mm: Mario Carneiro, 2014-03-15
+- The iset.mm version: Jim Kingdon, 2026-09-10, last week's lab at full scale
+- A CICM 2015 paper,
+  [Arithmetic in Metamath, Case Study: Bertrand's Postulate](http://arxiv.org/abs/1503.02349)
+
+[Metamath 100 at commit 2c1dffe](https://github.com/metamath/set.mm/blob/2c1dffe/mm_100.html) ·
+[metamath.org](https://us.metamath.org/other.html)
+
+```notes
+Last Wednesday you took one classical proof into iset.mm. Here is the same
+move on a theorem of arithmetic, twelve years after the classical proof
+landed.
+```
+
+---
+
+## A proof on camera
+
+[Formalizing Geometric Proof Schwabhäuser 4.6 in the Metamath Proof Explorer](https://youtu.be/3R27Qx69jHc),
+19-Jul-2020
+
+Among David A. Wheeler's videos listed on
+[metamath.org](https://us.metamath.org/other.html)
+
+```notes
+The one place you can watch someone else do what you do on Wednesdays, at
+their pace.
+```
+
+---
+
+## Legibility as a research question
+
+[Lindsay, Kaliszyk and Rizkallah (2026)](https://doi.org/10.48550/arxiv.2609.07097):
+Metamath's "verification architecture prioritises algorithmic efficiency over
+human readability."
+
+Reordering inferences can cut a reader's working memory load without changing
+proof size.
+
+```notes
+From the abstract as OpenAlex records it. The verifier does not care in what
+order the steps come; a reader does. Wednesday's plan is about the order.
+```
+
+---
+
+## Granularity
+
+[Oliveira and Pimentel (2021)](https://doi.org/10.1109/laclo54177.2021.00051)
+propose adapting the level of detail at which a proof is shown, using
+Metamath's step-level structure.
+
+```notes
+The second paper on the same theme: the proof is stored at every step, so a
+presentation can choose how many of them to show.
+```
+
+---
+
+## The scoreboard
+
+[Formalizing 100 Theorems](https://www.cs.ru.nl/~freek/100/), last modified
+2026-09-06:
+
+- HOL Light 95
+- Isabelle 92
+- Lean 83
+- Rocq 80
+- Metamath 74
+
+```notes
+One list, maintained outside any of the projects. The position matters less
+than the fact that every entry links to a proof someone can check.
+```
+
+---
+
+## Metamath 100
+
+"Currently there are **75** proofs proven by Metamath from this list of 100,"
+comparison dated 2026-04-28.
+
+To do: Gödel's incompleteness theorem, Fermat's last theorem.
+
+[Metamath 100](https://us.metamath.org/mm_100.html) at commit
+[2c1dffe](https://github.com/metamath/set.mm/blob/2c1dffe/mm_100.html)
+
+```notes
+Two pages, two dates, two counts: 74 and 75. The lecture page gives both with
+their dates, which is why a count about a living database is pinned to a
+commit.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. Choose a target too big for one worksheet: Teodor has a list, or ask
+   today
+2. Write the plan before opening mmj2: target, then lemmas, each a Metamath
+   statement, in order
+3. How set.mm does it: `pnt` with `pnt2` and `pnt3` beside it
+
+```notes
+A lemma is a statement, not a paragraph: each with its hypotheses and the
+set.mm theorems you expect it to lean on. Teodor reads every plan in the first
+twenty minutes, and a lemma that quietly assumes the target is rewritten
+before anything is proved.
+```
+
+---
+
+## What the lab checks
+
+- The plan is checked before you type a proof
+- Each lemma and the final proof verify in mmj2
+- The file passes `verify proof *` in metamath.exe
+- You can say which axioms the target depends on
+
+```notes
+The last one is a metamath.exe command, show trace_back, given on the Proof
+Explorer home page. The plan is submitted with its changes; a lemma that
+changed, with a line on why, counts for it.
+```
+
+---
+
+## Read before next week
+
+- [Metamath 100](https://us.metamath.org/mm_100.html): every proof on the list
+  with its label, author and date
+- [Formalization of the prime number theorem and Dirichlet's theorem](https://doi.org/10.48550/arxiv.1608.02029)
+- [Optimising Metamath Proofs for Human Working Memory](https://doi.org/10.48550/arxiv.2609.07097)
+
+```notes
+Skim the first for how big proofs are named. The third is why the order of
+steps matters to a reader, which Wednesday's plan is about.
+```

@@ -5,6 +5,7 @@ week: 3
 date: 2027-03-08
 teachers:
   - noor-castellane
+slides: /decks/week-03/
 related:
   - sessions/03-first-proof
   - assessments/lab-proofs

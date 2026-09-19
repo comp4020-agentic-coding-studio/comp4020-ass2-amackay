@@ -1,0 +1,222 @@
+---
+title: Other databases
+description: The week 8 lecture as slides — the Metamath databases beside set.mm, from the four explorers on metamath.org to Peano arithmetic, the MIU system, Laws of Form and the third-party databases on GitHub, and what to bring to Wednesday's lab.
+---
+
+{/* _class: centered */}
+
+# Other databases
+
+SLOP3373 Metamath 101 · Week 8
+
+Noor Castellane
+
+```notes
+Seven weeks on one database. This week is the others: what they are, where
+they live, and which ones get the same scrutiny set.mm gets. Wednesday you
+prove in one of them.
+```
+
+---
+
+{/* _class: impact */}
+
+# set.mm is one database among many.
+
+```notes
+Every lab so far has opened set.mm. The format does not care which file it
+reads, and the site keeps a whole shelf of them.
+```
+
+---
+
+## Which ones get five verifiers
+
+set.mm and iset.mm are "the primary databases under active development."
+
+"All other databases' proofs are verified by one verifier (metamath.exe)."
+
+[How are the databases verified?](https://github.com/metamath/set.mm/blob/develop/verifiers.md)
+
+```notes
+Two databases get the full panel from week 3; everything else on this shelf
+is checked by the original program alone. Keep that in mind when you weigh
+what a smaller database claims.
+```
+
+---
+
+{/* _class: impact */}
+
+"we must build and exhibit concrete examples of objects before we can accept
+their existence"
+
+— [Intuitionistic Logic Explorer](https://us.metamath.org/ileuni/mmil.html)
+
+```notes
+The explorer's own description of constructive logic. Everything that follows
+about iset.mm comes from this one requirement.
+```
+
+---
+
+## iset.mm: what changes
+
+- Lives in the [same repository](https://github.com/metamath/set.mm) as set.mm
+- Excluded middle, (φ ∨ ¬ φ), "doesn't always hold"
+- No double negation elimination
+- set.mm's `ax-3` is dropped
+
+[Intuitionistic Logic Explorer](https://us.metamath.org/ileuni/mmil.html)
+
+```notes
+The two databases share a repository and a verifier panel; they part company
+at the axioms. Note which one goes: ax-3, one of the propositional axioms
+week 10's lab reads again.
+```
+
+---
+
+## iset.mm: how it is built
+
+It "adds (or substitutes) intuitionistic axioms for a number of the classical
+logical axioms of set.mm."
+
+Its home page keeps a cross reference of set.mm theorems it lacks, with the
+closest replacements.
+
+[Intuitionistic Logic Explorer](https://us.metamath.org/ileuni/mmil.html)
+
+```notes
+That cross reference is Wednesday's working document. You pick a set.mm
+theorem from it, try it in iset.mm, and find out where it needs excluded
+middle.
+```
+
+---
+
+## hol.mm
+
+"an alternative approach to predicate logic that is distinguished from
+first-order logic by additional quantifiers and a stronger semantics. It is
+also called simple type theory."
+
+[Higher-Order Logic Explorer](https://us.metamath.org/holuni/mmhol.html)
+
+```notes
+Same language, a different logic at the bottom. Week 10 comes back to hol.mm
+as the landing point for proofs translated in from other systems.
+```
+
+---
+
+## nf.mm
+
+Created by Scott Fenton: "an alternative set theory to the Zermelo-Fraenkel
+set theory presented in the regular Metamath Proof Explorer," descended from
+the set theory of Principia Mathematica.
+
+[New Foundations Explorer](https://us.metamath.org/nfeuni/mmnf.html)
+
+```notes
+A different set theory rather than a different logic. The same axioms of
+propositional logic, and then a fork.
+```
+
+---
+
+## ql.mm
+
+Three sets of axioms, "the ortholattice axioms, the orthomodular law ... and
+stronger axioms," for a logic the page says nobody knows to be decidable.
+
+[Quantum Logic Explorer](https://us.metamath.org/qleuni/mmql.html)
+
+```notes
+The smallest of the four explorers, and the one whose logic is least settled.
+The page itself says the decidability question is open.
+```
+
+---
+
+## Smaller files
+
+On the [other topics page](https://us.metamath.org/other.html):
+
+- [peano.mm](https://us.metamath.org/metamath/peano.mm), Robert Solovay's
+  Peano arithmetic
+- [miu.mm](https://us.metamath.org/metamath/miu.mm), Hofstadter's MIU-system
+- big-unifier.mm and demo0.mm
+
+```notes
+Small enough to read end to end, which is what makes them useful test inputs
+for a verifier. peano.mm is the one exception to the CC0 licence from week 1.
+```
+
+---
+
+## Laws of Form
+
+Naip Moro's database: derivations of G. Spencer-Brown's boundary algebra.
+
+Its own page calls it "a non-trivial example of a system that requires,
+indeed is based on, the empty substitution."
+
+[Laws of Form in Metamath](http://naipmoro.github.io/lofmm/)
+
+```notes
+A whole system that depends on the empty substitution, and so a test input
+for your verifier: does yours handle it?
+```
+
+---
+
+## Third-party databases on GitHub
+
+Each in its README's words:
+
+- [sctfn/metamath-nf](https://github.com/sctfn/metamath-nf): "New Foundations
+  set theory developed in metamath"
+- [digama0/dtt.mm](https://github.com/digama0/dtt.mm): "Metamath database for
+  dependent type theory"
+- [tirix/q0.mm](https://github.com/tirix/q0.mm): "A Metamath library for the
+  Q0 logic"
+- [Sylvain78/bourbaki_in_metamath](https://github.com/Sylvain78/bourbaki_in_metamath):
+  "Bourbaki coded in metamath."
+
+```notes
+None of these is on metamath.org, and each is one verifier's word. They show
+what the format is used for beyond the site: type theory, another logic, a
+whole textbook.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. Download [iset.mm](https://us.metamath.org/metamath/iset.mm)
+2. Read "How to intuitionize classical proofs" on the
+   [Intuitionistic Logic Explorer](https://us.metamath.org/ileuni/mmil.html)
+3. Bring your verifier as it stands: Wednesday is the project check-in
+4. The [definition exercise](/assessments/definition-exercise/) is due this
+   week; submit it before the lab
+
+```notes
+The first hour is one theorem proved twice, in set.mm and then iset.mm. The
+second hour is the check-in on the verifier project: which of the suite's
+tests yours passes so far, against the suggested rate of progress.
+```
+
+---
+
+## Read before next week
+
+- [Intuitionistic Logic Explorer](https://us.metamath.org/ileuni/mmil.html):
+  "Overview of this work" and "How to intuitionize classical proofs"
+- [How are the databases verified?](https://github.com/metamath/set.mm/blob/develop/verifiers.md)
+- [Laws of Form in Metamath](http://naipmoro.github.io/lofmm/)
+
+```notes
+The explorer sections first; you need them by Wednesday. The other two are
+short.
+```

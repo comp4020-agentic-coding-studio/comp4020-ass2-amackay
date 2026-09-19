@@ -1,0 +1,206 @@
+---
+title: Definitions and soundness
+description: The week 7 lecture as slides — a Metamath definition is an axiom to the verifier, so a wrong one can make the database inconsistent without any proof failing; what the extra check is, which tool runs it, and the definition exercise this week sets.
+---
+
+{/* _class: centered */}
+
+# Definitions and soundness
+
+SLOP3373 Metamath 101 · Week 7
+
+Noor Castellane
+
+```notes
+Welcome back from the break. This week is about the one thing a proof
+verifier cannot catch, the tool that catches it instead, and the exercise
+that asks you to break a definition on purpose.
+```
+
+---
+
+{/* _class: impact */}
+
+"The only way to add a definition to a database is to introduce it as a new
+axiom."
+
+— [Proof Explorer, A Note on Definitions](https://us.metamath.org/mpeuni/mmset.html)
+
+```notes
+Appendix 4 of the Proof Explorer home page, which this lecture follows. Hold
+on to the word axiom: to the verifier, a definition is one.
+```
+
+---
+
+## The number 2
+
+`df-2` says `2 = ( 1 + 1 )`. Change it to `2 = ( 1 + 2 )` and `0 = 1`
+becomes provable.
+
+The verifier, seeing one more `$a`, "is perfectly content to use it as a new
+fact and does not issue an error message."
+
+[A Note on Definitions](https://us.metamath.org/mpeuni/mmset.html)
+
+```notes
+The note's own example. Every proof still checks; the database is now
+inconsistent. Wednesday you will make this change yourself and watch what
+does and does not complain.
+```
+
+---
+
+## A proof check is not enough
+
+The five verifiers that re-check set.mm on
+[every change](https://github.com/metamath/set.mm/blob/develop/verifiers.md)
+only ask whether each proof follows from the statements before it.
+
+```notes
+Five independent programs, and none of them would have noticed. That is not a
+bug in any of them; it is what a proof verifier is.
+```
+
+---
+
+## Metamath Zero's view
+
+"Definitions are just axioms in Metamath. There are tools in the Metamath
+ecosystem to check that definitions are conservative, but they are not built
+in to the verifier"
+
+— [Metamath Zero README](https://github.com/digama0/mm0), on Metamath's
+soundness issues
+
+```notes
+A later system's README, listing this among Metamath's soundness issues. The
+word to take away is conservative; the next slide says what it means.
+```
+
+---
+
+## What the check is
+
+A definition is sound if it is:
+
+- **eliminable**: any theorem using the new symbol can be rewritten as an
+  equivalent one without it
+- **conservative**: after that rewriting, still provable from the original
+  axioms
+
+[A Note on Definitions](https://us.metamath.org/mpeuni/mmset.html)
+
+```notes
+The standard from the note. In plain words: the new symbol is an abbreviation
+you could always expand away, and expanding it adds nothing the axioms could
+not already prove.
+```
+
+---
+
+## Which tool performs it
+
+- set.mm's documentation: "definitions are checked by mmj2"
+- Mario Carneiro added the check to mmj2
+- It verifies "all but four definitions"
+
+[How are the databases verified?](https://github.com/metamath/set.mm/blob/develop/verifiers.md) ·
+[A Note on Definitions](https://us.metamath.org/mpeuni/mmset.html)
+
+```notes
+So the check exists, and it runs, in the same program you prove in. It is
+just not part of proof verification, and four definitions are outside it.
+```
+
+---
+
+## The four exceptions
+
+`df-bi`, `df-clab`, `df-cleq` and `df-clel` "need to be justified with
+metalogic outside of mmj2's capabilities."
+
+[A Note on Definitions](https://us.metamath.org/mpeuni/mmset.html)
+
+```notes
+Four definitions at the very base of set.mm, justified by argument rather
+than by the tool. They are also the four you exclude when you run the check.
+```
+
+---
+
+## In mmj2
+
+- The check "runs a soundness check on all axioms in the database, except
+  those specified in the list."
+- Recommended exclusions: `ax-*,df-bi,df-clab,df-cleq,df-clel`, "which will
+  always fail the check."
+
+[Batch Command Documentation](https://github.com/digama0/mmj2/blob/master/doc/BatchCommandDocumentation.html)
+
+```notes
+Axioms are excluded because they are meant to be axioms; the four definitions
+because of the previous slide. Everything else in the database has to pass.
+```
+
+---
+
+## How the lab runs it
+
+- `SetMMDefinitionsCheckWithExclusions` is deprecated
+- In its place: `RunMacro,definitionCheck,...` with the same arguments
+
+[Batch Command Documentation](https://github.com/digama0/mmj2/blob/master/doc/BatchCommandDocumentation.html)
+
+```notes
+One RunParm line. Wednesday's first task is to run it on an unchanged copy of
+set.mm and keep the output, so you know what a clean report looks like.
+```
+
+---
+
+## The definition exercise
+
+- A definition of your own that passes mmj2's definition check
+- A second version that fails it
+- A write-up, at most 500 words: what the check found, and what would have
+  gone wrong without it
+- Due end of week 8
+
+[The definition exercise](/assessments/definition-exercise/)
+
+```notes
+Set today, and the lab starts it. The check's verdict is the mark for the
+two definitions; the write-up is marked on whether it says, in plain words,
+what the bad one would have let you prove.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. mmj2 loading set.mm, and an editor on a copy you are willing to break:
+   mmj2 "does *not* update Metamath .mm databases"
+   ([README](https://github.com/digama0/mmj2))
+2. Read [Appendix 4](https://us.metamath.org/mpeuni/mmset.html)
+3. A draft definition: a `$a` with a `df-` label, and one line on what it
+   abbreviates
+
+```notes
+Every definition on Wednesday goes into the file by hand. The draft you bring
+is the one you will run the check on, fix, and submit.
+```
+
+---
+
+## Read
+
+- [A Note on Definitions](https://us.metamath.org/mpeuni/mmset.html), Appendix
+  4 of the Proof Explorer home page: the note this lecture follows
+- [How are the databases verified?](https://github.com/metamath/set.mm/blob/develop/verifiers.md):
+  what is checked on every change to set.mm, and by what
+
+```notes
+The note is short and this lecture is almost entirely it. The verifiers page
+is one screen, and it is also the page the project brief sends you to.
+```

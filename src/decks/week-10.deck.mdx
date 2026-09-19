@@ -1,0 +1,224 @@
+---
+title: Descendants, translations and comparisons
+description: The week 10 lecture as slides — Metamath Zero, Ghilbert and Russell, the programs that carry proofs into and out of Metamath, one published comparison of seventeen provers, and what to open before Wednesday's reading lab.
+---
+
+{/* _class: centered */}
+
+# Descendants, translations and comparisons
+
+SLOP3373 Metamath 101 · Week 10
+
+Noor Castellane
+
+```notes
+Three languages that grew out of Metamath, the programs that move proofs
+between it and other systems, and one comparison. Nothing here ranks systems;
+Wednesday you read one descendant against the original.
+```
+
+---
+
+## Descendants
+
+Languages that keep Metamath's small verifier and change something else.
+
+- Metamath Zero
+- Ghilbert and JHilbert
+- Russell
+
+Then the translators, in and out. Then one comparison.
+
+```notes
+The thing they keep is the property the whole course rests on: a verifier
+small enough to be written by one person. What each changes is the interest.
+```
+
+---
+
+## Metamath Zero
+
+"a language for writing specifications and proofs", inspired by "Metamath and
+Lean, two proof languages at opposite ends of a spectrum."
+
+- Separates specification from proof
+- Adds Metamath One, in which proofs are written and compiled
+
+[digama0/mm0](https://github.com/digama0/mm0)
+
+```notes
+The repository's own description. Wednesday you read its hand-translation of
+set.mm's axioms beside set.mm itself.
+```
+
+---
+
+{/* _class: impact */}
+
+"to build a formally verified (in MM0) verifier for MM0, down to the hardware"
+
+— [digama0/mm0](https://github.com/digama0/mm0)
+
+```notes
+The stated goal. Week 3's argument was that small verifiers can be checked by
+writing more of them; this is the other route, checking one verifier all the
+way down.
+```
+
+---
+
+## Metamath Zero on paper
+
+- 2019, [arXiv](https://doi.org/10.48550/arxiv.1910.10703): "aims for
+  simplicity of logic and implementation, without compromising on efficiency
+  of verification"
+- 2020, indexed at [its DOI](https://doi.org/10.1007/978-3-030-53518-6_5)
+  without an abstract
+- The [Trivial kernel](https://github.com/trivial-rs/kernel) checks MM0's
+  binary proof format
+
+```notes
+Two papers and a second, independent checker for the binary format. The
+pattern from week 3 again: more than one verifier for the same input.
+```
+
+---
+
+## Ghilbert and JHilbert
+
+Raph Levien's language, "that has its roots in Metamath but guarantees the
+soundness of definitions" — Megill, in Wiedijk's survey
+([PDF, p. 104](https://www.cs.ru.nl/~freek/comparison/comparison.pdf)).
+
+The Metamath site lists its verifier gh_verify, and JHilbert, "written in Java
+by Alexander Klauer" ([other.html](https://us.metamath.org/other.html)).
+
+```notes
+Soundness of definitions is what week 7's definition exercise was about.
+Ghilbert put it in the language.
+```
+
+---
+
+## Russell
+
+Its mdl program is "a compiler from a relativily high-level language for the
+representation of formal mathematics to the simple and robust for checking
+language Metamath."
+
+[dmitry-vlasov/russell](https://github.com/dmitry-vlasov/russell) · download
+dated 10-Apr-2013 on [other.html](https://us.metamath.org/other.html)
+
+```notes
+The quotation is exact, spelling included. The idea: write at a higher level
+and compile down to Metamath, so the thing checked stays simple.
+```
+
+---
+
+## Translations in
+
+Carneiro's 2014 paper, as [its arXiv record](https://doi.org/10.48550/arxiv.1412.8091)
+describes it, converts proofs from OpenTheory, an exchange format for "the HOL
+family of proof languages", into Metamath: first into hol.mm, then into set.mm.
+
+```notes
+This is why week 8 flagged hol.mm. It is the landing point: a HOL proof
+arrives there first, and is carried into set.mm second.
+```
+
+---
+
+## Translations out, and in again
+
+- `mm0-hs from-mm`: Metamath to MM0
+  ([digama0/mm0](https://github.com/digama0/mm0))
+- [mm2dk](https://gitlab.com/semantiko/mm2dk/translator): Metamath to Dedukti
+- [AML-Lean-to-Metamath](https://gitlab.com/ilds/aml-lean/AML-Lean-to-Metamath)
+  and [kore2mm](https://github.com/zhengyao-lin/kore2mm): matching logic into
+  Metamath, from Lean and from Kore
+
+```notes
+Two directions. Out of Metamath into a descendant and into Dedukti; into
+Metamath from two matching-logic projects. A format this small is easy to
+target.
+```
+
+---
+
+## One proof, seventeen systems
+
+[The Seventeen Provers of the World](https://www.cs.ru.nl/~freek/comparison/comparison.pdf):
+the irrationality of the square root of 2, in seventeen systems.
+
+Metamath's entry, pp. 103–105, is by Megill.
+
+```notes
+Same theorem in every system, so the proofs can be read side by side. The
+Metamath pages are the second item on the reading list.
+```
+
+---
+
+{/* _class: impact */}
+
+"It is a proof verifier, not an automated prover"
+
+— Megill, [The Seventeen Provers of the World](https://www.cs.ru.nl/~freek/comparison/comparison.pdf)
+
+```notes
+Megill's own line, and the one to keep when the next slide sets Metamath
+beside its neighbours.
+```
+
+---
+
+## Five neighbours, in their own words
+
+- [Lean](https://lean-lang.org/): "an open-source programming language and
+  proof assistant"
+- [Rocq Prover](https://rocq-prover.org/): "formerly known as the Coq Proof
+  Assistant"
+- [Isabelle](http://www.cl.cam.ac.uk/Research/HVG/Isabelle/index.html): "a
+  generic proof assistant"
+- [HOL Light](http://www.cl.cam.ac.uk/~jrh13/hol-light/): "higher order logic"
+- Mizar: "whereas Metamath shows you every detail"
+  ([Metamath home page](https://us.metamath.org/index.html))
+
+```notes
+Four descriptions from the projects' own front pages, and one from Metamath's
+home page, which says Mizar mimics published proofs. Names to search, not a
+ranking.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. Read the Introduction of the
+   [Metamath Zero README](https://github.com/digama0/mm0)
+2. Open its `examples/set.mm0`: "a hand-translation of the axiom system of
+   set.mm into MM0"
+3. Open [set.mm](https://github.com/metamath/set.mm) at `ax-1`, `ax-2`, `ax-3`
+   and `ax-mp`
+   ([their statements](https://us.metamath.org/mpeuni/mmset.html))
+
+```notes
+Nothing to install for the reading: two files, two windows. You need mmj2 for
+the last 45 minutes, as in every proving lab. The half-page is returned with
+comments, not marked.
+```
+
+---
+
+## Read before next week
+
+- [Metamath Zero README](https://github.com/digama0/mm0): what MM0 keeps from
+  Metamath and what it changes
+- [The Seventeen Provers of the World, pp. 103–105](https://www.cs.ru.nl/~freek/comparison/comparison.pdf):
+  Metamath in its author's words
+
+```notes
+The README before Wednesday; the three pages of the survey whenever, but this
+week.
+```

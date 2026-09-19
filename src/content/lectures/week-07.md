@@ -8,6 +8,7 @@ week: 7
 date: 2027-04-19
 teachers:
   - noor-castellane
+slides: /decks/week-07/
 related:
   - sessions/07-a-definition-that-fails
   - assessments/definition-exercise

@@ -1,0 +1,216 @@
+---
+title: The axioms, and the metalogic behind $d
+description: The week 6 lecture as slides — where set.mm's axioms come from, why its statements are schemes rather than theorems, what a distinct-variable condition is, and the results and open problems around them.
+---
+
+{/* _class: centered */}
+
+# The axioms, and the metalogic behind $d
+
+SLOP3373 Metamath 101 · Week 6
+
+Noor Castellane
+
+```notes
+You have written proofs for three weeks without asking what the axioms are or
+why some steps need a $d line. This week is the why, and Wednesday's lab is
+what happens when the $d line is taken away.
+```
+
+---
+
+## The axioms are schemes
+
+set.mm's axioms "should be interpreted as schemes, or recipes, for generating
+those axioms and theorems".
+
+[Proof Explorer, note on the axioms](https://us.metamath.org/mpeuni/mmset.html#axiomnote)
+
+```notes
+A scheme is a recipe with variables in it; each way of filling the variables
+is one axiom. What set.mm proves are schemes too, which is why one theorem
+covers infinitely many cases.
+```
+
+---
+
+## Where they come from
+
+The system "is founded on a simplified formalization of predicate calculus
+with equality published by logician Alfred Tarski in 1965".
+
+[Proof Explorer, note on the axioms](https://us.metamath.org/mpeuni/mmset.html#axiomnote)
+
+```notes
+Tarski's system is the base; set.mm adds schemes to it. The next slide says
+what the additions buy.
+```
+
+---
+
+## Scheme completeness
+
+The extra schemes give "scheme completeness (defined in Remark 9.6 of
+[Megill] and called "metalogical completeness" there)".
+
+Norman Megill,
+[A Finitely Axiomatized Formalization of Predicate Calculus with Equality](http://projecteuclid.org/euclid.ndjfl/1040149359)
+(1995) · [preprint](https://us.metamath.org/downloads/finiteaxiom.pdf)
+
+```notes
+The 1995 paper is where the axiom system was worked out. The preprint on the
+site is the readable copy; the journal page is the citation.
+```
+
+---
+
+{/* _class: impact */}
+
+"$d x y simply means that x and y must be distinct, i.e. they may not be
+simultaneously substituted with the same variable. The statement $d x ϕ means
+variable x must not occur in wff ϕ."
+
+— [The Metamath book](https://us.metamath.org/downloads/metamath.pdf)
+
+```notes
+The whole meaning of $d in two sentences. A $d statement is the price of the
+simple axiom system: the scheme is only sound when these variables stay
+apart.
+```
+
+---
+
+## Not part of the logic
+
+$d conditions "are metalogical conditions imposed on certain axiom and theorem
+schemes. They have no role in the actual logic (object language)".
+
+Wednesday's lab removes one and watches the verifier object.
+
+[Proof Explorer, Appendix 3](https://us.metamath.org/mpeuni/mmset.html#distinct)
+
+```notes
+Metalogical: a condition on the recipe, not a statement in the language. The
+verifier enforces it at substitution time, which is the error you will read
+on Wednesday.
+```
+
+---
+
+## What a Metamath system means
+
+Mario Carneiro,
+[Models for Metamath](https://doi.org/10.48550/arxiv.1601.07699) (2016):
+
+- defines models for an arbitrary Metamath formal system
+- uses them to show the main database consistent if ZFC has a model
+
+```notes
+As the abstract is indexed. This is the semantic side of the course: not
+whether a proof checks, but what a checked proof is about.
+```
+
+---
+
+## pmproofs.txt
+
+- "proofs of all 193 theorems of propositional calculus in Whitehead and
+  Russell's _Principia Mathematica_, directly from axioms ax-1, ax-2, ax-3,
+  and ax-mp"
+- notation "invented by logician C. A. Meredith in the 1950's"
+- shorter proofs as late as 2025
+
+[pmproofs.txt](https://us.metamath.org/mmsolitaire/pmproofs.txt)
+
+```notes
+Megill's file, from the site's other topics page. Read the header this week;
+the notation is compact enough that checking one proof by hand is a
+reasonable evening.
+```
+
+---
+
+## The paper behind the notation
+
+[Weaker D-Complete Logics](https://us.metamath.org/downloads/weakd.pdf), by
+Norman Megill and Martin W. Bunder: the paper on that notation's logic.
+
+```notes
+Listed on the same page. Optional; here so the file on the previous slide has
+its theory attached.
+```
+
+---
+
+## Workshop Miscellany
+
+- Begun for the 2003 Argonne workshop
+- Lists open problems, some since solved
+- 2018: Benoît Jubin showed "the "Axiom of Twoness" is needed for completeness
+  of the ZFC axioms without distinct variables"
+
+[Workshop Miscellany](https://us.metamath.org/award2003.html)
+
+```notes
+An open-problems page that has been getting answers for twenty years. The
+2018 result is about exactly this week's topic: what the axioms can and
+cannot do once $d is dropped.
+```
+
+---
+
+## The same machinery, another logic
+
+The [Quantum Logic Explorer](https://us.metamath.org/qleuni/mmql.html): its
+proofs "verified by the Metamath program with the database file ql.mm".
+
+```notes
+Nothing in the verifier knows about classical logic. Change the database and
+the same program checks a non-classical system.
+```
+
+---
+
+## One parse per formula
+
+Carneiro's
+[Grammar ambiguity in set.mm](https://us.metamath.org/downloads/grammar-ambiguity.txt)
+(2015) proves set.mm's syntax has one parse per formula, since "without this
+constraint, the task of finding syntax proofs can become just as difficult as
+finding logical proofs".
+
+```notes
+Why the assistants can find syntax proofs for you: the grammar is
+unambiguous, and a 2015 note proves it. Your verifier gets to assume it.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. Install metamath-exe beside mmj2: one portable executable, per its
+   [README](https://github.com/metamath/metamath-exe/blob/master/README.TXT),
+   "Then run it and type "read set.mm""
+2. Read
+   [Appendix 3](https://us.metamath.org/mpeuni/mmset.html#distinct)
+   of the Proof Explorer home page: the experiment we start with
+
+```notes
+The lab begins by reproducing the appendix's own demonstration on a copy of
+set.mm, then moves to the assigned theorem in mmj2. It is the last lab before
+the two-week break.
+```
+
+---
+
+## Read
+
+- [Appendix 3: Distinct Variables](https://us.metamath.org/mpeuni/mmset.html#distinct)
+  — the worked `$d` example the lab reproduces
+- [pmproofs.txt](https://us.metamath.org/mmsolitaire/pmproofs.txt) — read the
+  header, which explains the notation, then check one proof by hand
+
+```notes
+The appendix before Wednesday, without fail. The proof by hand is the
+homework: pick a short one from the file.
+```

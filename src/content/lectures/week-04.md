@@ -7,6 +7,7 @@ week: 4
 date: 2027-03-15
 teachers:
   - noor-castellane
+slides: /decks/week-04/
 related:
   - sessions/04-navigate-and-prove
   - assessments/lab-proofs

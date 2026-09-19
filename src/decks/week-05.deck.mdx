@@ -1,0 +1,230 @@
+---
+title: Proof assistants
+description: The week 5 lecture as slides — the tools a student proves with, mmj2, metamath-lamp, Yamma, mmt1 and metamath-exe's own assistant, how they differ from a verifier, and the verifier project this week sets.
+---
+
+{/* _class: centered */}
+
+# Proof assistants
+
+SLOP3373 Metamath 101 · Week 5
+
+Noor Castellane
+
+```notes
+Two things this week: a tour of the tools that build proofs, and the project
+you will be writing until the end of week 12. The project comes third, once
+the distinction it rests on is clear.
+```
+
+---
+
+## Assistant or verifier
+
+- "Proof assistants help you interactively create proofs"
+- "Metamath verifiers do not make logical inferences; they just verify that
+  the proof as stated is correct."
+
+[Metamath Home Page](https://us.metamath.org/index.html)
+
+```notes
+The home page draws the line, and it is the line this course is built on. An
+assistant helps you find a proof; a verifier only says whether the one you
+wrote is right.
+```
+
+---
+
+## The verifier project
+
+- A Metamath verifier, written by you
+- Any language except C, C++, Rust, Java and Python
+- Marked against a test suite the course provides
+- Check-in at the week 8 lab; due end of week 12
+
+[The verifier project](/assessments/verifier-project/)
+
+```notes
+The five languages are taken: set.mm's own verifiers are written in exactly
+those, and yours goes somewhere new. Full details, the suite and the marking
+scheme follow on the assessment page.
+```
+
+---
+
+## mmj2
+
+- "includes a GUI for creating proofs, proof verification tools, and
+  grammatical/syntax analysis"
+- "originally developed by Mel O'Cat 2005-2011"
+- since "modified by Mario Carneiro and David A. Wheeler"
+- needs Java
+
+[mmj2 README](https://github.com/digama0/mmj2/blob/master/README.md)
+
+```notes
+The assistant the labs use, and what the README says about itself. Java is
+the one installation cost; if you cannot run it, the last slide has the
+alternative.
+```
+
+---
+
+## mmj2's commands
+
+- `LoadFile` reads a database
+- `Parse` and `VerifyProof` check it
+- `RunProofAsstGUI` opens the assistant
+
+[Batch Command Documentation](https://github.com/digama0/mmj2/blob/master/doc/BatchCommandDocumentation.html)
+
+```notes
+mmj2 is driven by a file of commands. These four are the ones every lab
+uses; the documentation lists the rest, and Wednesday sends you to two more.
+```
+
+---
+
+## Two videos
+
+By David A. Wheeler, listed on the site's
+[other topics page](https://us.metamath.org/other.html):
+
+- [Introduction to Metamath & mmj2](https://www.youtube.com/watch?v=Rst2hZpWUbU)
+  (2014)
+- [Walkthrough of the tutorial in mmj2](https://www.youtube.com/watch?v=87mnU1ckbI0)
+  (2020)
+
+```notes
+The first shows the worksheet you work in; the second is the tutorial
+walkthrough. Wednesday's lab assumes you have watched the second.
+```
+
+---
+
+## metamath-lamp
+
+- By Igor Ieskov; runs in the browser
+- "users can use this proof assistant without installing anything"
+- The [Metamath-lamp Guide](https://github.com/metamath/lamp-guide) "was
+  primarily authored by David A. Wheeler"
+
+[metamath-lamp README](https://github.com/expln/metamath-lamp/blob/develop/README.md)
+
+```notes
+Nothing to install is its selling point, and the guide is by the same person
+who made the mmj2 videos. It is the fallback if Java will not run for you.
+```
+
+---
+
+## Yamma and mmt1
+
+- **Yamma**: "A language server for .mmp files (metamath proof files)" in
+  Visual Studio Code; quick fixes for "missing disjoint vars statements" —
+  [README](https://github.com/glacode/yamma)
+- **mmt1**: "a mmj2 style proof assistant" that also builds "entire
+  (grammatical) metamath databases" —
+  [README](https://github.com/marloBruder/mmt1)
+
+```notes
+Two more recent assistants, one inside an editor and one modelled on mmj2.
+Yamma's quick fix for missing disjoint variables is worth remembering for
+week 6.
+```
+
+---
+
+## metamath-exe's own assistant
+
+"the PROVE command starts its proof assistant features; use HELP PROVE inside
+metamath-exe for further documentation"
+
+[Other Metamath-related topics](https://us.metamath.org/other.html) ·
+[metamath-exe](https://github.com/metamath/metamath-exe)
+
+```notes
+The program you verified set.mm with in week 1 can also build proofs, from
+the command line. The next tool moves a proof between it and mmj2.
+```
+
+---
+
+## eimm
+
+"An experimental proof export-import program" that "translates incomplete
+proofs in progress between the Metamath program's CLI Proof Assistant and
+Mel O'Cat's mmj2 GUI Proof Assistant".
+
+[Metamath Home Page](https://us.metamath.org/index.html) ·
+[eimm](https://us.metamath.org/downloads/eimm.zip)
+
+```notes
+A bridge between the two assistants on the previous slides, for a proof that
+is half done. You are unlikely to need it; it is here so the name means
+something when you see it.
+```
+
+---
+
+## Three older tools
+
+Listed on the site in 2015:
+
+- [MM Tool](http://mm.ivank.net/): "a Metamath proof verifier and editor that
+  runs in a browser"
+- [Igor](https://github.com/Drahflow/Igor): "written in a custom language by
+  Drahflow; in progress"
+- [Milpgame](https://us.metamath.org/other/milpgame/milpgame.html): "either
+  forward and backward relative to the statement to prove"
+
+```notes
+All from the other topics page. MM Tool is by the author of the introduction
+you read in week 2; Milpgame lets a proof grow in either direction.
+```
+
+---
+
+{/* _class: impact */}
+
+# What you write will read the proofs these tools produce.
+
+```notes
+This is why the tour precedes the project. Every assistant here ends by
+writing a proof into a database, and a verifier is the program that reads it
+back and says yes or no.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. Bring the mmj2 and set.mm setup from last week
+2. Watch
+   [Walkthrough of the tutorial in mmj2](https://www.youtube.com/watch?v=87mnU1ckbI0)
+3. In the
+   [Batch Command Documentation](https://github.com/digama0/mmj2/blob/master/doc/BatchCommandDocumentation.html),
+   read `DeclareWorkVars` and `DefineWorkVarType`
+
+```notes
+Wednesday is unification and work variables, then a theorem that needs
+several steps. The two documentation entries are short; the video is where
+the worksheet will start to look familiar.
+```
+
+---
+
+## Read
+
+- [Introduction to Metamath & mmj2](https://www.youtube.com/watch?v=Rst2hZpWUbU)
+  — it shows the worksheet you will work in
+- [mmj2 Batch Command Documentation](https://github.com/digama0/mmj2/blob/master/doc/BatchCommandDocumentation.html)
+  — the command file, and what `VerifyProof` does
+- [Metamath-lamp Guide](https://github.com/metamath/lamp-guide) — the
+  alternative if you cannot run Java; ask the tutor first
+
+```notes
+The video first. The batch documentation is a reference, not a read-through:
+find `VerifyProof` and read that entry, because your verifier has to agree
+with it.
+```
