@@ -63,3 +63,6 @@ Maintained by the agent: one line per commit, what it did, no interpretation.
 - `55c2fcd` — wrote the week 1 deck, 16 slides with speaker notes.
 - `a882e6a` — added `spec/course-promises.test.ts` and `spec/sources.json`: the twelve-week shape, the calendar, the assessment sum, and the list of every outside link.
 - `2e254ff` — refined weeks 10 to 12 after review: quotations cut at the source's words, axioms pointed at the Proof Explorer.
+- `3dc1b65` — set the level to 3 (`SLOP3373`), rewrote the verifier project (any language but C, C++, Rust, Java or Python; marked against a course-provided suite; details to follow), made the week 8 lab a check-in, removed the review rule from `CLAUDE.md`.
+- `179a1db` — dropped the last mention of the peano.mm milestone, in lab 2.
+- `35a0691` — wrote decks for weeks 2 to 12 and made the spec expect a built deck on every lecture.
