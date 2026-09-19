@@ -39,7 +39,7 @@ Download [miu.mm](https://us.metamath.org/metamath/miu.mm) and [peano.mm](https:
 
 Start with miu.mm, which the book prints in full as Appendix D. Its own comment describes a system with three symbols `M`, `I` and `U`, one axiom `MI` and four rules; the file declares five constants, since it also needs `wff` and `|-`, and states each rule as an `$a` inside a block with an `$e` hypothesis. Label every statement by its keyword. Note the comment saying the system allows empty formulas, so `SET EMPTY_SUBSTITUTION ON` is needed before proving in metamath-exe.
 
-Then skim peano.mm for shape: how blocks nest, where `$d` appears, how long the proofs are. It returns in week 8 as the verifier project's milestone target.
+Then skim peano.mm for shape: how blocks nest, where `$d` appears, how long the proofs are. It returns in week 8.
 
 Then write your own. The pattern is the example in section 2.2.2 of the book, pages 40 to 42: declare constants with `$c`, a variable with `$v`, give it a type with `$f`, state an axiom with `$a`, and prove one `$p` statement whose proof is a list of labels. Ten lines is enough. Run `verify proof *` in metamath-exe until it passes. If there is time, run [mmverify.py](https://us.metamath.org/downloads/mmverify.py) over the same file; its header comment gives the command.
 
