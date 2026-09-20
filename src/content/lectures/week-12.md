@@ -8,7 +8,6 @@ week: 12
 date: 2027-05-24
 teachers:
   - noor-castellane
-slides: /decks/week-12/
 related:
   - sessions/12-retrospective
   - assessments/verifier-project

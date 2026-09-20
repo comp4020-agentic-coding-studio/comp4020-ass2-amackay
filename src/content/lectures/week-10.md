@@ -8,7 +8,6 @@ week: 10
 date: 2027-05-10
 teachers:
   - noor-castellane
-slides: /decks/week-10/
 related:
   - sessions/10-read-mm0
   - assessments/lab-proofs

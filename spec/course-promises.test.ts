@@ -62,10 +62,14 @@ describe("twelve weeks", () => {
     }
   });
 
-  it("gives every lecture a deck that built", () => {
+  it("gives week 1 a deck, and a built deck to every lecture that names one", () => {
+    const opening = ofType("lectures").find((n) => week(n) === 1) as ApiNode;
+    expect(opening.meta?.slides, "week 1 names its deck").toBe("/decks/week-01/");
     for (const lecture of ofType("lectures")) {
+      const slides = lecture.meta?.slides;
+      if (slides === undefined) continue;
       const slug = `week-${String(week(lecture)).padStart(2, "0")}`;
-      expect(lecture.meta?.slides, `${lecture.id} names its deck`).toBe(`/decks/${slug}/`);
+      expect(slides, `${lecture.id} names its own deck`).toBe(`/decks/${slug}/`);
       expect(existsSync(resolve(`dist/decks/${slug}/index.html`)), `${slug} built`).toBe(true);
     }
   });

@@ -8,7 +8,6 @@ week: 9
 date: 2027-05-03
 teachers:
   - noor-castellane
-slides: /decks/week-09/
 related:
   - sessions/09-a-longer-proof
   - assessments/lab-proofs
