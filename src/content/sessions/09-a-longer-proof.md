@@ -2,7 +2,7 @@
 title: A longer proof
 description: >-
   Plan a proof that needs several lemmas before typing any of it, then prove
-  the lemmas in order in mmj2 and verify the whole file in metamath.exe.
+  the lemmas in order in mmj2 and verify the whole file in metamath-exe.
 week: 9
 date: 2027-05-05
 teachers:
@@ -13,7 +13,7 @@ related:
 spec:
   - your plan names the target theorem and every lemma as a Metamath statement, and the tutor checked it before you typed a proof
   - each lemma's proof and the final proof verify in mmj2 with no errors
-  - the file holding them passes `verify proof *` in metamath.exe with no errors, and you can say which axioms the final theorem depends on
+  - the file holding them passes `verify proof *` in metamath-exe with no errors, and you can say which axioms the final theorem depends on
 links:
   - label: "Metamath 100 at set.mm commit 2c1dffe"
     url: https://github.com/metamath/set.mm/blob/2c1dffe/mm_100.html
@@ -49,7 +49,7 @@ database file with the editor as you go, since mmj2
 ["does *not* update Metamath .mm databases"](https://github.com/digama0/mmj2).
 
 In the last twenty minutes, verify the file. Run `verify proof *` in
-metamath.exe, which the
+metamath-exe, which the
 [Metamath book](https://us.metamath.org/downloads/metamath.pdf) recommends
 doing periodically "to ensure their integrity." Then run
 `show trace_back <label> /essential /axioms` on your target, the command

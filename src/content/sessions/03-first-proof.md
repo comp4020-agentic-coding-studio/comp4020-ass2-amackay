@@ -11,7 +11,7 @@ related:
 spec:
   - your worksheet for the theorem handed out at the start unifies in mmj2 with no errors
   - every step cites a hypothesis, an axiom or an earlier theorem of set.mm by label
-  - the worksheet is submitted before you leave
+  - the worksheet is submitted by 5pm on Friday, as the lab proofs page says
 links:
   - label: mmj2 on GitHub
     url: https://github.com/digama0/mmj2
@@ -43,4 +43,4 @@ mmj2 does not write into a database. The README says that once a proof is comple
 
 ## Afterwards
 
-Submit the worksheet file before you leave. It is marked on whether it unifies without error and whether every step cites a real label; the mark and a line of feedback come back before the next lab.
+Submit the worksheet file as the [lab proofs page](/assessments/lab-proofs/) says, by 5pm on Friday; most people finish in the room and submit before they leave. It is marked on whether it unifies without error and whether every step cites a real label, and the mark and a line of feedback come back before the next lab.

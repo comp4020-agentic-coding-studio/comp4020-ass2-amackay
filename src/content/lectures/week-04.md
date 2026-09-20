@@ -56,7 +56,7 @@ substitution." The
 contents: Part 1 is classical first-order logic with equality, Part 2
 Zermelo–Fraenkel set theory, Part 3 ZFC, and later parts run through real and
 complex numbers, number theory, algebra and topology. Section 1.2,
-Propositional calculus, is where this week's lab proves.
+Propositional calculus, is where this week's lab works.
 
 A theorem's description cites a book by a bracketed label such as [Tarski] or
 [Megill]; the home page's

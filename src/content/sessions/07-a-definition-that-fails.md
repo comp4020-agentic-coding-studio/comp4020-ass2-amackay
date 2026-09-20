@@ -58,7 +58,7 @@ mmj2, in the usual way: a worksheet that unfolds the definition once.
 
 ## Afterwards
 
-The passing definition, its theorem, and the clean report are the first
-part of your [definition exercise](/assessments/definition-exercise/)
-submission. Keep the failing reports too: they go in with one line each on
-what the check found and what you changed.
+The passing definition is the good one for your
+[definition exercise](/assessments/definition-exercise/), and the version
+that failed is the bad one; keep both, and keep the reports, because what the
+check found is what the write-up explains.

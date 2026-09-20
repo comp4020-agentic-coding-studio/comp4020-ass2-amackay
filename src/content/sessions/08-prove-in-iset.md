@@ -16,7 +16,7 @@ related:
 spec:
   - your proof of the chosen theorem verifies in mmj2 against set.mm with no errors
   - the same statement verifies against iset.mm, or you have named the step that needs excluded middle and the closest iset.mm replacement from the cross reference
-  - your verifier accepts peano.mm and reports the same result as `verify proof *` in metamath.exe on the same file
+  - your verifier runs on peano.mm at the check-in, and you can say which of the tests named that morning it passes
 links:
   - label: "Intuitionistic Logic Explorer"
     url: https://us.metamath.org/ileuni/mmil.html

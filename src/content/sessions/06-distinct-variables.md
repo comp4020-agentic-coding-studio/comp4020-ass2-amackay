@@ -30,10 +30,9 @@ links:
 
 ## Before the lab
 
-Install metamath-exe beside mmj2. Its
+Have metamath-exe from week 1 beside mmj2; its
 [README](https://github.com/metamath/metamath-exe/blob/master/README.TXT)
-gives one portable executable for Windows, macOS and Linux and says "Then run
-it and type "read set.mm"". Read
+says "Then run it and type "read set.mm"". Read
 [Appendix 3](https://us.metamath.org/mpeuni/mmset.html#distinct) of the Proof
 Explorer home page, which contains the experiment we start with.
 

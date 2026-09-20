@@ -49,7 +49,7 @@ links:
 
 Metamath has descendants: languages that keep its small verifier and change
 something else. This lecture covers three, the programs that carry proofs into
-and out of Metamath, and one published comparison. It does not rank systems.
+and out of Metamath, and one published comparison.
 
 **Metamath Zero.** Its repository calls it "a language for writing
 specifications and proofs", inspired by "Metamath and Lean, two proof languages

@@ -37,8 +37,8 @@ links:
 
 Since 2016 a line of papers has used set.mm to train and test programs that
 search for proofs. This lecture takes them in order, each as its own abstract
-describes it, and stops where the abstracts stop. A held-out set, below, is the
-group of theorems kept back from training.
+describes it. A held-out set, below, is the group of theorems kept back from
+training.
 
 - **Holophrasm (2016).** Daniel Whalen's system, as
   [its record](https://doi.org/10.48550/arxiv.1608.02644) describes it,

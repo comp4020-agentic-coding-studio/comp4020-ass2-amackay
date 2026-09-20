@@ -29,13 +29,11 @@ links:
 
 ## Before the lab
 
-Have mmj2 running with set.mm loaded. mmj2 needs a Java runtime, and its
-[README](https://github.com/digama0/mmj2/blob/master/README.md)
-points to the install instructions and to an interactive tutorial "which ought
-to take about an hour"; do the tutorial if you have not. Download set.mm from
-the [repository](https://github.com/metamath/set.mm). Start mmj2 before you
-arrive: the README says it "takes a time to get started (circa 60 seconds on a
-slow machine loading the large database set.mm)".
+Have mmj2 running with set.mm loaded before you arrive: its
+[README](https://github.com/digama0/mmj2/blob/master/README.md) says it
+"takes a time to get started (circa 60 seconds on a slow machine loading the
+large database set.mm)". If you skipped the interactive tutorial before week
+3, do it now; the README says it "ought to take about an hour".
 
 ## In the lab
 

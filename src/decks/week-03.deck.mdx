@@ -35,10 +35,10 @@ in four lines, and the verifier project in week 5 is that section in code.
 ## The rule
 
 - A hypothesis label pushes its expression
-- An assertion label needs a substitution matching its hypotheses to the stack
-  top; pop them, push the substituted assertion
-- At the end one entry remains, equal to the statement being proved
-- Every substitution respects the `$d` restrictions
+- An assertion label matches its hypotheses to the stack top by substitution,
+  pops them, pushes the result
+- At the end, one entry remains: the statement proved
+- Every substitution respects `$d`
 
 [Metamath book, section 4.1.4](https://us.metamath.org/downloads/metamath.pdf)
 
@@ -86,14 +86,14 @@ theorem through.
 
 - The algorithm "fits in two pages in the Metamath book"
 - The Rust verifier typically checks set.mm in under a second
-- Every other database in the repository is verified by metamath-exe alone
+- Every other database gets metamath-exe alone
 
 [How are the databases verified?](https://github.com/metamath/set.mm/blob/develop/verifiers.md)
 
 ```notes
-Under a second for the whole of set.mm is the scale to keep in mind when your
-own verifier meets its week 8 milestone. Two pages is the size of the thing
-you are implementing.
+Under a second for the whole of set.mm is the scale to keep in mind at your
+own verifier's week 8 check-in. Two pages is the size of the thing you are
+implementing.
 ```
 
 ---
@@ -115,12 +115,11 @@ is the concrete form of "re-verified by five different verifiers".
 
 ## checkmm, up close
 
-- Arrives as one `.cpp` file from
-  [its author's repository](https://github.com/EricSchmidt-119/checkmm),
-  compiled with `g++`
-- Its header comment argues every verifier would have to share a defect for an
+- One `.cpp` file from
+  [its author's repository](https://github.com/EricSchmidt-119/checkmm)
+- Its header comment: every verifier would have to share a defect for an
   invalid theorem to get in
-- It counts four where the prose page counts five
+- It counts four verifiers; the prose page counts five
 
 [checkmm.cpp](https://us.metamath.org/downloads/checkmm.cpp)
 
@@ -134,8 +133,7 @@ cite the one you use.
 
 ## Testing the testers: metamath-test
 
-A set of databases that should and should not pass, with drivers for six
-verifiers.
+Databases that should and should not pass, with drivers for six verifiers.
 
 Without the failing cases, "if you replaced a verifier with the program "true"
 it would produce the same results".
@@ -206,8 +204,9 @@ worksheet is section 4.1.4, executed.
 
 ```notes
 The theorem is handed out on paper at the start. You build the proof as a
-worksheet, unify until mmj2 stops objecting, and submit the file before you
-leave. From this week to week 11, each lab's proof is marked.
+worksheet, unify until mmj2 stops objecting, and submit the file by Friday;
+most finish in the room. From this week to week 11, each lab's proof is
+marked.
 ```
 
 ---

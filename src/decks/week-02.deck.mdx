@@ -37,12 +37,12 @@ them twice more.
 
 ## Tokens
 
-A database is a sequence of tokens, drawn from the 94 printable ASCII
-characters and separated by white space. Three kinds:
+A database is tokens separated by white space, drawn from the 94 printable
+ASCII characters. Three kinds:
 
 - **keywords**, which all begin with `$`
 - **labels**, which name statements
-- **math symbols**, which are anything else
+- **math symbols**, anything else
 
 [Metamath book, section 4.1](https://us.metamath.org/downloads/metamath.pdf)
 
@@ -140,8 +140,8 @@ Wednesday, for the example the lab copies.
 Ivan Kuckir's opens: "Official Metamath description has 211 pages. This is a
 "shrinked" version".
 
-It presents Metamath as a language for defining a formal grammar: `$c`
-declares terminal symbols, `$v` nonterminals.
+It reads Metamath as a grammar: `$c` declares terminal symbols, `$v`
+nonterminals.
 
 [Introduction to Metamath](https://blog.ivank.net/introduction-to-metamath.html) ·
 [Other Topics](https://us.metamath.org/other.html)
@@ -156,7 +156,7 @@ nonterminal is a useful way to see $c and $v if you have met grammars before.
 
 ## Grammar one: MM.g4
 
-An Antlr4 grammar, behind the gramm verifier, on one screen:
+The Antlr4 grammar behind the gramm verifier, on one screen:
 
 - a database is `stat* EOF`
 - a label is `[A-Za-z0-9._-]+`
@@ -177,8 +177,7 @@ it.
 A [tree-sitter grammar](https://github.com/perrotuerto/tree-sitter-metamath/blob/main/README.md)
 parses a database into a syntax tree from Python.
 
-Neither grammar says whether a proof is right. A grammar only tokenises and
-parses.
+Neither says whether a proof is right. A grammar only tokenises and parses.
 
 ```notes
 Two machine-readable grammars, and neither is a verifier. Keep the two jobs
@@ -191,8 +190,7 @@ parsing half comes first.
 ## `$j`
 
 "a way to include information in metamath proof files which are not needed for
-verifying, but which are useful for other tools like proof assistants,
-definition checkers"
+verifying, but which are useful for other tools"
 
 A kind of comment (book, section 4.4.3), so a verifier may skip them.
 

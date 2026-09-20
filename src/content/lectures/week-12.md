@@ -92,12 +92,12 @@ created on 11 September 2013 and holds, among others,
 [metamath-exe](https://github.com/metamath/metamath-exe), "source code for the
 Metamath executable", and [set.mm](https://github.com/metamath/set.mm).
 
-**History, as far as it is documented.** The
+**History.** The
 [set.mm README](https://github.com/metamath/set.mm/blob/develop/README.md)
 dedicates the collection to the memory of Norman "Norm" Dwight Megill, Ph.D.
 (1950-2021), "creator of the Metamath system and cultivator of an international
 community of people with the shared dream of digitizing and formally verifying
-mathematics". That is what is documented, and this page stops there.
+mathematics".
 
 ## Read
 

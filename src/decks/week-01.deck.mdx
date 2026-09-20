@@ -22,13 +22,14 @@ what to have installed by Wednesday. No proofs yet; those start in week 3.
 
 - Lectures on Mondays
 - Labs on Wednesdays
-- From week 3, every lab is a proof in mmj2
+- From week 3, every lab ends with a proof in mmj2
 - From week 5, you write your own verifier, due at the end of week 12
 
 ```notes
 The labs are where the course happens; a lecture gives you what that week's
-lab needs. The verifier project is half the mark, and everything from today on
-feeds it.
+lab needs. Lab proofs are 30% of the mark, the definition exercise in weeks 7
+and 8 is 20%, and the verifier project is 50%. Everything from today feeds the
+project.
 ```
 
 ---
@@ -52,7 +53,6 @@ archiving, presenting. The whole course sits inside this sentence.
 - A **database** is a text file: axioms, theorems, proofs.
 - A **verifier** is a program that checks every proof in it.
 
-Both in the project's words:
 [Mini FAQ, "What is Metamath?"](https://us.metamath.org/index.html)
 
 ```notes
@@ -65,7 +65,7 @@ you run one over the biggest database there is.
 
 ## The name
 
-It means "metavariable math", and is not _metamathematics_, the branch of
+It means "metavariable math". It is not _metamathematics_, the branch of
 mathematics that studies mathematics itself.
 
 The name has been in public use since 1994.
@@ -74,8 +74,9 @@ The name has been in public use since 1994.
 [Copyright Terms](https://us.metamath.org/copyright.html)
 
 ```notes
-Search results mix the two constantly. The 1994 date sits on the copyright
-page, under Trademarks, of all places.
+Search results mix the two constantly. The 1994 date is on the copyright
+page, under Trademarks, of all places: "used publicly by Norman Megill since
+1994".
 ```
 
 ---
@@ -90,8 +91,8 @@ Permanent links use `us.metamath.org`. So does your work.
 [Metamath Site Selection](https://us.metamath.org/mm.html)
 
 ```notes
-Two mirrors, one preferred for links. When you cite a page in a lab report or
-the project report, that is the hostname.
+Two mirrors, one preferred for links. When you cite a page in a lab submission
+or the project report, that is the hostname.
 ```
 
 ---
@@ -99,15 +100,15 @@ the project report, that is the hostname.
 ## How a mirror stays in step
 
 ```sh
-rsync -vrltS -z --delete --delete-after \
-    rsync://rsync.metamath.org/metamath $DIR
+rsync -vrltS -z --delete --delete-after --block-size=400 \
+    rsync://rsync.metamath.org/metamath /var/www/html/metamathsite
 ```
 
-Run as a nightly cron job, pulling from the primary. The whole recipe is one text
+A nightly cron job, pulling from the primary. The whole recipe is one text
 file: [mirror.txt](https://us.metamath.org/mirror.txt)
 
 ```notes
-The site is static files copied by rsync. That is why an off-line copy is
+The site is static files copied by rsync. That is why an offline copy is
 possible, and why a mirror can be a day behind.
 ```
 
@@ -123,7 +124,9 @@ possible, and why a mirror can be a day behind.
 
 ```notes
 This is what you may do with Wednesday's downloads. Contributors are asked to
-put database work in the public domain too, and the page says why.
+put database work in the public domain too, and the page's editorial comment
+says why: for proofs, the author thinks public domain "is in the best spirit
+and tradition of mathematics".
 ```
 
 ---
@@ -140,7 +143,8 @@ put database work in the public domain too, and the page says why.
 
 ```notes
 Sources and databases are under version control in one organisation. The
-book's source is there too, with an archive of older editions.
+book's source is there too, and the home page says the repository "also
+provides an archive of older editions".
 ```
 
 ---
@@ -153,7 +157,7 @@ contributor's own account:
 [github.com/digama0/mmj2](https://github.com/digama0/mmj2)
 
 ```notes
-The home page lists it under Downloads as the development repository. Do not
+The home page lists it under Downloads as the "development repository". Do not
 go looking for it under the organisation.
 ```
 
@@ -185,8 +189,9 @@ Yours will be one more.
 [Mini FAQ, "How confident can I be in the proofs?"](https://us.metamath.org/index.html)
 
 ```notes
-This is the argument for the project. The language is small enough that
-independent implementations are normal, and disagreement between them is the
+This is the argument for the project. The FAQ's reasoning: the language is
+small, so a verifier is small, and "it is unlikely that all verifiers will
+have the same kind of bug". Disagreement between independent verifiers is the
 check.
 ```
 
@@ -207,34 +212,35 @@ you can tell them apart.
 
 ## The other Metamaths
 
-- 2023: a language-model paper, dataset MetaMathQA —
+- 2023: a language-model paper and its dataset MetaMathQA —
   [arXiv](https://doi.org/10.48550/arxiv.2309.12284),
   [OpenAlex](https://openalex.org/W4386978002)
-- 2014: a Russian-language article on a Tempus-programme project in maths
-  education — [OpenAlex](https://openalex.org/W2955268382)
-- 2026: a paper on assessing mathematical metacognition in primary school —
+- 2014: a Russian-language article on a maths-education project —
+  [OpenAlex](https://openalex.org/W2955268382)
+- 2026: a paper on assessing metacognition in primary school —
   [OpenAlex](https://openalex.org/W7160684602)
 
 ```notes
 The 2023 one is the one you will hit most: "MetaMath" with a capital M in a
-machine-learning context is almost always it.
+machine-learning context is almost always it. Week 11 says what that paper is
+about; nothing in it concerns this language.
 ```
 
 ---
 
 ## Before Wednesday's lab
 
-1. metamath-exe: download from the
-   [Home Page](https://us.metamath.org/index.html); on Linux or macOS,
-   `gcc *.c -o metamath`
-2. mmj2: `mmj2.zip` from the same page, or
-   [the repository](https://github.com/digama0/mmj2)
+1. metamath-exe: the portable executable, or compile the C source, as its
+   [README](https://github.com/metamath/metamath-exe/blob/master/README.TXT)
+   says
+2. mmj2: follow `INSTALL.md` in
+   [the repository](https://github.com/digama0/mmj2); it needs Java
 3. set.mm: [github.com/metamath/set.mm](https://github.com/metamath/set.mm)
 
 ```notes
-The Downloads section of the home page has the instructions for both
-programs. Bring the laptop with all three on it: the lab verifies set.mm with
-the first and opens it in the second.
+The lab page has the same three steps with the commands. Bring the laptop with
+all three on it: the lab verifies set.mm with the first program and opens it in
+the second. If either will not run, that is what the lab is for.
 ```
 
 ---
@@ -248,5 +254,5 @@ the first and opens it in the second.
 
 ```notes
 Twenty minutes for the FAQ, five for the rest. The FAQ is the vocabulary for
-the whole course.
+the whole course; next week is the language itself, in four pages.
 ```

@@ -32,7 +32,7 @@ links:
     url: https://us.metamath.org/index.html
 ---
 
-By the end of the hour you have two programs installed and one large file checked. Nothing here is graded; it is the setup every later lab assumes.
+By the end of the lab you have two programs installed and one large file checked. Nothing here is graded; it is the setup every later lab assumes.
 
 ## Before the lab
 

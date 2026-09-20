@@ -29,7 +29,7 @@ links:
     url: https://us.metamath.org/downloads/mmverify.py
 ---
 
-Two databases to read, one to write, all within the hour.
+Two databases to read, one to write.
 
 ## Before the lab
 

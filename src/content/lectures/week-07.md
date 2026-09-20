@@ -69,7 +69,8 @@ RunParm `SetMMDefinitionsCheckWithExclusions` is deprecated in favour of
 Wednesday's lab runs.
 
 The [definition exercise](/assessments/definition-exercise/) is set this
-week: a definition that passes this check, and a theorem proved from it.
+week: a definition that passes this check, one that fails it, and a write-up
+of what the check caught.
 
 ## Read
 

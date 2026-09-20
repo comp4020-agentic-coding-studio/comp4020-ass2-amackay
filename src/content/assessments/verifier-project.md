@@ -16,7 +16,7 @@ marking:
 spec:
   - a verifier written by you, in a language other than C, C++, Rust, Java or Python, that reads a Metamath database and reports whether every proof in it is correct
   - it passes the core tests of the suite the course provides
-  - by the week 8 lab it passes the tests the check-in names
+  - it is shown running at the week 8 lab check-in, against the tests the check-in names
   - a short report on how you tested it
 links:
   - label: set.mm verifiers page
