@@ -40,23 +40,17 @@ export const slopCourseMetaSchema = z
 
 // The single source of truth for the course record. The generated homepage,
 // navigation label and /api/index.json all read this object.
-// Replace every placeholder value, but keep the shape: the catalogue ingests
-// this API contract when the course is published.
-//
-// The code's last three digits were assigned to this repo when it was
-// provisioned, and no other course in the cohort has them. Change the first
-// digit to your course's level (and `level` to match); keep the other three.
-// STARTER_CONTENT: replace this course record, then remove this comment.
 export const courseMeta = slopCourseMetaSchema.parse({
-  code: "SLOP1373",
-  title: "Course Title Goes Here",
+  code: "SLOP3373",
+  title: "Metamath 101",
   session: "Semester 1",
   year: 2027,
-  level: 1,
+  level: 3,
   startDate: "2027-02-22",
   endDate: "2027-05-28",
   description:
-    "One concise paragraph explaining what this course is, who it is for, " +
-    "and why somebody would choose to spend a semester taking it.",
-  tags: ["replace me"],
+    "Metamath from nothing: the language, the programs that check it, the set.mm " +
+    "database, and proving in mmj2. Twelve weeks of lectures and labs, ending in a " +
+    "proof verifier you wrote yourself.",
+  tags: ["formal proof", "logic", "verification"],
 }) satisfies CourseMetaInput;

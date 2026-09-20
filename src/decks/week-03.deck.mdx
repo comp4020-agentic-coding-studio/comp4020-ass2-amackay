@@ -1,0 +1,226 @@
+---
+title: Verification
+description: The week 3 lecture as slides — the stack rule a verifier runs, the five verifiers that check every change to set.mm and the workflow that runs them, the two conformance suites, and how many more verifiers exist.
+---
+
+{/* _class: centered */}
+
+# Verification
+
+SLOP3373 Metamath 101 · Week 3
+
+Noor Castellane
+
+```notes
+Last week: what a proof is, a list of labels. This week: what a verifier does
+with that list, and who runs one over set.mm. Wednesday is the first proof,
+and the first lab that counts.
+```
+
+---
+
+## A verifier runs a stack
+
+It reads a proof as a list of labels. Section 4.1.4 of the
+[Metamath book](https://us.metamath.org/downloads/metamath.pdf) is the whole
+rule.
+
+```notes
+One section, one data structure. Everything on the next slide is that section
+in four lines, and the verifier project in week 5 is that section in code.
+```
+
+---
+
+## The rule
+
+- A hypothesis label pushes its expression
+- An assertion label matches its hypotheses to the stack top by substitution,
+  pops them, pushes the result
+- At the end, one entry remains: the statement proved
+- Every substitution respects `$d`
+
+[Metamath book, section 4.1.4](https://us.metamath.org/downloads/metamath.pdf)
+
+```notes
+Push, match, pop, push. The only search a verifier does is finding the
+substitution, and the proof has already told it which assertion to try.
+```
+
+---
+
+{/* _class: impact */}
+
+"Metamath verifiers do not make logical inferences; they just verify that the
+proof as stated is correct."
+
+— [Metamath Home Page](https://us.metamath.org/index.html)
+
+```notes
+This is why the program is small and why there can be many of them. Nothing
+is discovered; a claim is checked.
+```
+
+---
+
+## Five verifiers gate set.mm
+
+- [metamath.exe](https://github.com/metamath/metamath-exe), C, Norman Megill
+- [checkmm](https://us.metamath.org/downloads/checkmm.cpp), C++, Eric Schmidt
+- [smetamath-rs](https://github.com/sorear/smetamath-rs/blob/master/README.md),
+  Rust, Stefan O'Rear
+- [mmj2](https://github.com/digama0/mmj2), Java, Mel L. O'Cat and Mario Carneiro
+- [mmverify.py](https://us.metamath.org/downloads/mmverify.py), Python, Raph Levien
+
+[How are the databases verified?](https://github.com/metamath/set.mm/blob/develop/verifiers.md)
+
+```notes
+Every change to set.mm and iset.mm is re-verified by all five, the page says.
+Five languages, five authors: a bug would have to be shared to let a bad
+theorem through.
+```
+
+---
+
+## The same page also says
+
+- The algorithm "fits in two pages in the Metamath book"
+- The Rust verifier typically checks set.mm in under a second
+- Every other database gets metamath-exe alone
+
+[How are the databases verified?](https://github.com/metamath/set.mm/blob/develop/verifiers.md)
+
+```notes
+Under a second for the whole of set.mm is the scale to keep in mind at your
+own verifier's week 8 check-in. Two pages is the size of the thing you are
+implementing.
+```
+
+---
+
+## The machinery
+
+A GitHub Actions workflow,
+[verifiers.yml](https://github.com/metamath/set.mm/blob/develop/.github/workflows/verifiers.yml),
+run on every push and pull request.
+
+Each job downloads, builds and runs one verifier.
+
+```notes
+Open the file and find the five jobs; that is one of this week's readings. It
+is the concrete form of "re-verified by five different verifiers".
+```
+
+---
+
+## checkmm, up close
+
+- One `.cpp` file from
+  [its author's repository](https://github.com/EricSchmidt-119/checkmm)
+- Its header comment: every verifier would have to share a defect for an
+  invalid theorem to get in
+- It counts four verifiers; the prose page counts five
+
+[checkmm.cpp](https://us.metamath.org/downloads/checkmm.cpp)
+
+```notes
+A whole verifier in one source file, and its own comment makes the
+independence argument. The two sources disagree on the count; notice it, and
+cite the one you use.
+```
+
+---
+
+## Testing the testers: metamath-test
+
+Databases that should and should not pass, with drivers for six verifiers.
+
+Without the failing cases, "if you replaced a verifier with the program "true"
+it would produce the same results".
+
+[metamath-test README](https://github.com/david-a-wheeler/metamath-test/blob/master/README.md)
+
+```notes
+A verifier that accepts everything passes every positive test. The suite
+exists for the proofs that must be rejected, and that is the reading for the
+week.
+```
+
+---
+
+## Testing the testers: mm-verifier-tests
+
+Edge cases, each marked `$( should verify $)` or `$( should error $)`.
+
+The verifier project, set in week 5, is run against both suites.
+
+[mm-verifier-tests README](https://github.com/LegionMammal978/mm-verifier-tests/blob/main/README.md)
+
+```notes
+The second suite is the awkward corners of the specification. When your
+project is marked, these two suites are what it is run over, so read the
+markers now.
+```
+
+---
+
+## How many verifiers exist
+
+- The home page: "over a dozen"
+- The Other Topics list runs from Haskell and Lua to Julia, Zig and Lean
+- Wikipedia: at least 19
+
+[Home Page](https://us.metamath.org/index.html) ·
+[Other Topics](https://us.metamath.org/other.html) ·
+[Wikipedia](https://en.wikipedia.org/wiki/Metamath)
+
+```notes
+Five gate the database; far more exist. Three sources, three counts: cite
+whichever you use, with its source.
+```
+
+---
+
+{/* _class: impact */}
+
+# When mmj2 accepts your proof, it has run this stack.
+
+```notes
+Wednesday's proof assistant is one of the five. The green result on your
+worksheet is section 4.1.4, executed.
+```
+
+---
+
+## Before Wednesday's lab
+
+1. Do mmj2's interactive tutorial; its
+   [README](https://github.com/digama0/mmj2/blob/master/README.md) says about
+   an hour
+2. Or the two videos: [introduction](https://www.youtube.com/watch?v=Rst2hZpWUbU),
+   [tutorial walkthrough](https://www.youtube.com/watch?v=87mnU1ckbI0)
+3. Check `RunParms.txt` still loads your `set.mm`:
+   [RunParm reference](https://github.com/digama0/mmj2/blob/master/doc/BatchCommandDocumentation.html)
+
+```notes
+The theorem is handed out on paper at the start. You build the proof as a
+worksheet, unify until mmj2 stops objecting, and submit the file by Friday;
+most finish in the room. From this week to week 11, each lab's proof is
+marked.
+```
+
+---
+
+## Read before next week
+
+- [How are the databases verified?](https://github.com/metamath/set.mm/blob/develop/verifiers.md):
+  one page, the most important this week
+- [verifiers.yml](https://github.com/metamath/set.mm/blob/develop/.github/workflows/verifiers.yml):
+  the workflow itself; find the five jobs
+- [metamath-test README](https://github.com/david-a-wheeler/metamath-test/blob/master/README.md):
+  why a verifier's tests need proofs that must fail
+
+```notes
+One page of prose, one workflow file, one README. Under half an hour, and all
+three come back in week 5 when the project is set.
+```
